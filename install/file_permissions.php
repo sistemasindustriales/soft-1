@@ -204,7 +204,7 @@ if (!is_writable('../temp')){
 </table>
 <hr />
 <?php if ($error == true){
-    echo '<div class="text-center alert alert-danger">You need to fix the requirements in order to install</div>';
+    echo '<div class="text-center alert alert-danger">You need to fix the requirements in order to install Perfex CRM</div>';
 } else {
     echo '<div class="text-center">';
     echo '<form action="" method="post" accept-charset="utf-8">';

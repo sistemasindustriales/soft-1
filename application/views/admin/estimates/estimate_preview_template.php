@@ -86,7 +86,7 @@
                   <div class="mtop10"></div>
                </div>
                <div class="pull-right _buttons">
-                  <?php if(has_permission('estimates','','edit')){ ?>
+                  <?php if(staff_can('edit', 'estimates')){ ?>
                   <a href="<?php echo admin_url('estimates/estimate/'.$estimate->id); ?>" class="btn btn-default btn-with-tooltip" data-toggle="tooltip" title="<?php echo _l('edit_estimate_tooltip'); ?>" data-placement="bottom"><i class="fa fa-pencil-square-o"></i></a>
                   <?php } ?>
                   <div class="btn-group">
@@ -133,8 +133,15 @@
                         <li>
                            <a href="#" data-toggle="modal" data-target="#sales_attach_file"><?php echo _l('invoice_attach_file'); ?></a>
                         </li>
+                        <?php if (staff_can('create', 'projects') && $estimate->project_id == 0) { ?>
+                           <li>
+                              <a href="<?php echo admin_url("projects/project?via_estimate_id={$estimate->id}&customer_id={$estimate->clientid}") ?>">
+                                 <?php echo _l('estimate_convert_to_project'); ?>
+                              </a>
+                           </li>
+                        <?php } ?>
                         <?php if($estimate->invoiceid == NULL){
-                           if(has_permission('estimates','','edit')){
+                           if(staff_can('edit', 'estimates')){
                              foreach($estimate_statuses as $status){
                                if($estimate->status != $status){ ?>
                         <li>
@@ -146,21 +153,21 @@
                            ?>
                         <?php } ?>
                         <?php } ?>
-                        <?php if(has_permission('estimates','','create')){ ?>
+                        <?php if(staff_can('create', 'estimates')){ ?>
                         <li>
                            <a href="<?php echo admin_url('estimates/copy/'.$estimate->id); ?>">
                            <?php echo _l('copy_estimate'); ?>
                            </a>
                         </li>
                         <?php } ?>
-                        <?php if(!empty($estimate->signature) && has_permission('estimates','','delete')){ ?>
+                        <?php if(!empty($estimate->signature) && staff_can('delete', 'estimates')){ ?>
                         <li>
                            <a href="<?php echo admin_url('estimates/clear_signature/'.$estimate->id); ?>" class="_delete">
                            <?php echo _l('clear_signature'); ?>
                            </a>
                         </li>
                         <?php } ?>
-                        <?php if(has_permission('estimates','','delete')){ ?>
+                        <?php if(staff_can('delete', 'estimates')){ ?>
                         <?php
                            if((get_option('delete_only_on_last_estimate') == 1 && is_last_estimate($estimate->id)) || (get_option('delete_only_on_last_estimate') == 0)){ ?>
                         <li>
@@ -173,7 +180,7 @@
                      </ul>
                   </div>
                   <?php if($estimate->invoiceid == NULL){ ?>
-                  <?php if(has_permission('invoices','','create') && !empty($estimate->clientid)){ ?>
+                  <?php if(staff_can('create', 'invoices') && !empty($estimate->clientid)){ ?>
                   <div class="btn-group pull-right mleft5">
                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <?php echo _l('estimate_convert_to_invoice'); ?> <span class="caret"></span>

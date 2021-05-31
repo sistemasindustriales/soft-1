@@ -57,9 +57,8 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1>404 Pagina no encontrada</h1>
-
-<p>No se encontró la página que solicitó.</p>
+		<h1><?php echo $heading; ?></h1>
+		<?php echo $message; ?>
 	</div>
 </body>
 </html>

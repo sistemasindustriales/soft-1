@@ -340,6 +340,7 @@ class Tasks_model extends App_Model
                 'dateadded'   => date('Y-m-d H:i:s'),
                 'addedfrom'   => $list['addedfrom'],
                 'list_order'  => $list['list_order'],
+                'assigned'  => $list['assigned'],
             ]);
         }
     }
@@ -568,6 +569,12 @@ class Tasks_model extends App_Model
             }
         }
 
+        $withDefaultAssignee = true;
+        if (isset($data['withDefaultAssignee'])) {
+            $withDefaultAssignee = $data['withDefaultAssignee'];
+            unset($data['withDefaultAssignee']);
+        }
+
         $data = hooks()->apply_filters('before_add_task', $data);
 
         $tags = '';
@@ -606,7 +613,11 @@ class Tasks_model extends App_Model
             if ($clientRequest == false) {
                 $new_task_auto_assign_creator = (get_option('new_task_auto_assign_current_member') == '1' ? true : false);
 
-                if (isset($data['rel_type']) && $data['rel_type'] == 'project' && !$this->projects_model->is_member($data['rel_id'])) {
+                if ( isset($data['rel_type'])
+                    && $data['rel_type'] == 'project'
+                    && !$this->projects_model->is_member($data['rel_id'])
+                    || !$withDefaultAssignee
+                    ) {
                     $new_task_auto_assign_creator = false;
                 }
                 if ($new_task_auto_assign_creator == true) {
@@ -1693,6 +1704,9 @@ class Tasks_model extends App_Model
                 delete_dir(get_upload_path_by_type('task') . $id);
             }
 
+            $this->db->where('meta_key', 'task-hide-completed-items-'. $id);
+            $this->db->delete(db_prefix() . 'user_meta');
+
             hooks()->do_action('task_deleted', $id);
 
             return true;
@@ -2350,5 +2364,17 @@ class Tasks_model extends App_Model
         }
 
         pusher_trigger_notification($notifiedUsers);
+    }
+
+    public function update_checklist_assigned_staff($data)
+    {
+        $assigned = $this->db->escape_str($data['assigned']);
+        if (!is_numeric($assigned) || $assigned == 0) {
+            $assigned = null;
+        }
+        $this->db->where('id', $data['checklistId']);
+        $this->db->update(db_prefix() . 'task_checklist_items', [
+            'assigned' =>  $assigned,
+        ]);
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 11, 2020 at 02:17 PM
+-- Generation Time: Apr 27, 2021 at 04:50 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.4.13
 
@@ -450,7 +450,7 @@ INSERT INTO `tblcountries` (`country_id`, `iso2`, `short_name`, `long_name`, `is
 (171, 'PG', 'Papua New Guinea', 'Independent State of Papua New Guinea', 'PNG', '598', 'yes', '675', '.pg'),
 (172, 'PY', 'Paraguay', 'Republic of Paraguay', 'PRY', '600', 'yes', '595', '.py'),
 (173, 'PE', 'Peru', 'Republic of Peru', 'PER', '604', 'yes', '51', '.pe'),
-(174, 'PH', 'Phillipines', 'Republic of the Philippines', 'PHL', '608', 'yes', '63', '.ph'),
+(174, 'PH', 'Philippines', 'Republic of the Philippines', 'PHL', '608', 'yes', '63', '.ph'),
 (175, 'PN', 'Pitcairn', 'Pitcairn', 'PCN', '612', 'no', 'NONE', '.pn'),
 (176, 'PL', 'Poland', 'Republic of Poland', 'POL', '616', 'yes', '48', '.pl'),
 (177, 'PT', 'Portugal', 'Portuguese Republic', 'PRT', '620', 'yes', '351', '.pt'),
@@ -673,7 +673,7 @@ CREATE TABLE `tblcustomer_groups` (
 
 CREATE TABLE `tblcustomfields` (
   `id` int(11) NOT NULL,
-  `fieldto` varchar(15) NOT NULL,
+  `fieldto` varchar(30) DEFAULT NULL,
   `name` varchar(150) NOT NULL,
   `slug` varchar(150) NOT NULL,
   `required` tinyint(1) NOT NULL DEFAULT '0',
@@ -688,7 +688,8 @@ CREATE TABLE `tblcustomfields` (
   `show_on_table` tinyint(1) NOT NULL DEFAULT '0',
   `show_on_client_portal` int(11) NOT NULL DEFAULT '0',
   `disalow_client_to_edit` int(11) NOT NULL DEFAULT '0',
-  `bs_column` int(11) NOT NULL DEFAULT '12'
+  `bs_column` int(11) NOT NULL DEFAULT '12',
+  `default_value` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -840,6 +841,11 @@ INSERT INTO `tblemailtemplates` (`emailtemplateid`, `type`, `slug`, `language`, 
 (73, 'client', 'new-customer-profile-file-uploaded-to-staff', 'english', 'New Customer Profile File(s) Uploaded (Sent to Staff)', 'Customer Uploaded New File(s) in Profile', 'Hi!<br /><br />New file(s) is uploaded into the customer ({client_company}) profile by&nbsp;{contact_firstname}<br /><br />You can check the uploaded files into the admin area by clicking <a href=\"{customer_profile_files_admin_link}\">here</a> or at the following link:&nbsp;{customer_profile_files_admin_link}<br /><br />{email_signature}', '{companyname} | CRM', '', 0, 1, 0),
 (74, 'staff', 'event-notification-to-staff', 'english', 'Event Notification (Calendar)', 'Upcoming Event - {event_title}', 'Hi {staff_firstname}! <br /><br />This is a reminder for event <a href=\\\"{event_link}\\\">{event_title}</a> scheduled at {event_start_date}. <br /><br />Regards.', '', '', 0, 1, 0),
 (75, 'subscriptions', 'subscription-payment-requires-action', 'english', 'Credit Card Authorization Required - SCA', 'Important: Confirm your subscription {subscription_name} payment', '<p>Hello {contact_firstname}</p>\r\n<p><strong>Your bank sometimes requires an additional step to make sure an online transaction was authorized.</strong><br /><br />Because of European regulation to protect consumers, many online payments now require two-factor authentication. Your bank ultimately decides when authentication is required to confirm a payment, but you may notice this step when you start paying for a service or when the cost changes.<br /><br />In order to pay the subscription <strong>{subscription_name}</strong>, you will need to&nbsp;confirm your payment by clicking on the follow link: <strong><a href=\"{subscription_authorize_payment_link}\">{subscription_authorize_payment_link}</a></strong><br /><br />To view the subscription, please click at the following link: <a href=\"{subscription_link}\"><span>{subscription_link}</span></a><br />or you can login in our dedicated area here: <a href=\"{crm_url}/login\">{crm_url}/login</a> in case you want to update your credit card or view the subscriptions you are subscribed.<br /><br />Best Regards,<br />{email_signature}</p>', '{companyname} | CRM', '', 0, 1, 0);
+INSERT INTO `tblemailtemplates` (`emailtemplateid`, `type`, `slug`, `language`, `name`, `subject`, `message`, `fromname`, `fromemail`, `plaintext`, `active`, `order`) VALUES
+(76, 'invoice', 'invoice-due-notice', 'english', 'Invoice Due Notice', 'Your {invoice_number} will be due soon', '<span style=\"font-size: 12pt;\">Hi {contact_firstname} {contact_lastname}<br /><br /></span>You invoice <span style=\"font-size: 12pt;\"><strong># {invoice_number} </strong>will be due on <strong>{invoice_duedate}</strong></span><br /><br /><span style=\"font-size: 12pt;\">You can view the invoice on the following link: <a href=\"{invoice_link}\">{invoice_number}</a></span><br /><br /><span style=\"font-size: 12pt;\">Kind Regards,</span><br /><span style=\"font-size: 12pt;\">{email_signature}</span>', '{companyname} | CRM', '', 0, 1, 0),
+(77, 'estimate_request', 'estimate-request-submitted-to-staff', 'english', 'Estimate Request Submitted (Sent to Staff)', 'New Estimate Request Submitted', '<span> Hello,&nbsp;</span><br /><br />{estimate_request_email} submitted an estimate request via the {estimate_request_form_name} form.<br /><br />You can view the request at the following link: <a href=\"{estimate_request_link}\">{estimate_request_link}</a><br /><br />==<br /><br />{estimate_request_submitted_data}<br /><br />Kind Regards,<br /><span>{email_signature}</span>', '{companyname} | CRM', '', 0, 1, 0),
+(78, 'estimate_request', 'estimate-request-assigned', 'english', 'Estimate Request Assigned (Sent to Staff)', 'New Estimate Request Assigned', '<span> Hello {estimate_request_assigned},&nbsp;</span><br /><br />Estimate request #{estimate_request_id} has been assigned to you.<br /><br />You can view the request at the following link: <a href=\"{estimate_request_link}\">{estimate_request_link}</a><br /><br />Kind Regards,<br /><span>{email_signature}</span>', '{companyname} | CRM', '', 0, 1, 0),
+(79, 'estimate_request', 'estimate-request-received-to-user', 'english', 'Estimate Request Received (Sent to User)', 'Estimate Request Received', 'Hello,<br /><br /><strong>Your request has been received.</strong><br /><br />This email is to let you know that we received your request and we will get back to you as soon as possible with more information.<br /><br />Best Regards,<br />{email_signature}', '{companyname} | CRM', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -901,6 +907,72 @@ CREATE TABLE `tblestimates` (
   `signature` varchar(40) DEFAULT NULL,
   `short_link` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblestimate_requests`
+--
+
+CREATE TABLE `tblestimate_requests` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `submission` longtext NOT NULL,
+  `last_status_change` datetime DEFAULT NULL,
+  `date_estimated` datetime DEFAULT NULL,
+  `from_form_id` int(11) DEFAULT NULL,
+  `assigned` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `default_language` int(11) NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblestimate_request_forms`
+--
+
+CREATE TABLE `tblestimate_request_forms` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `form_key` varchar(32) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `form_data` mediumtext,
+  `recaptcha` int(11) DEFAULT NULL,
+  `status` int(11) NOT NULL,
+  `submit_btn_name` varchar(100) DEFAULT NULL,
+  `success_submit_msg` text,
+  `language` varchar(100) DEFAULT NULL,
+  `dateadded` datetime DEFAULT NULL,
+  `notify_type` varchar(100) DEFAULT NULL,
+  `notify_ids` mediumtext,
+  `responsible` int(11) DEFAULT NULL,
+  `notify_request_submitted` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblestimate_request_status`
+--
+
+CREATE TABLE `tblestimate_request_status` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `statusorder` int(11) DEFAULT NULL,
+  `color` varchar(10) DEFAULT NULL,
+  `flag` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tblestimate_request_status`
+--
+
+INSERT INTO `tblestimate_request_status` (`id`, `name`, `statusorder`, `color`, `flag`) VALUES
+(1, 'Cancelled', 1, '#808080', 'cancelled'),
+(2, 'Processing', 2, '#007bff', 'processing'),
+(3, 'Completed', 3, '#28a745', 'completed');
 
 -- --------------------------------------------------------
 
@@ -1115,6 +1187,7 @@ CREATE TABLE `tblinvoices` (
   `clientnote` text,
   `adminnote` text,
   `last_overdue_reminder` date DEFAULT NULL,
+  `last_due_reminder` date DEFAULT NULL,
   `cancel_overdue_reminders` int(11) NOT NULL DEFAULT '0',
   `allowed_payment_modes` mediumtext,
   `token` mediumtext,
@@ -1443,7 +1516,7 @@ CREATE TABLE `tblmigrations` (
 --
 
 INSERT INTO `tblmigrations` (`version`) VALUES
-(273);
+(284);
 
 -- --------------------------------------------------------
 
@@ -1597,7 +1670,7 @@ INSERT INTO `tbloptions` (`id`, `name`, `value`, `autoload`) VALUES
 (7, 'use_knowledge_base', '1', 1),
 (8, 'smtp_email', '', 1),
 (9, 'smtp_password', '', 1),
-(10, 'company_info_format', '{company_name}<br />\r\r\n{address}<br />\r\r\n{city} {state}<br />\r\r\n{country_code} {zip_code}<br />\r\r\n{vat_number_with_label}', 0),
+(10, 'company_info_format', '{company_name}<br />\r\n{address}<br />\r\n{city} {state}<br />\r\n{country_code} {zip_code}<br />\r\n{vat_number_with_label}', 0),
 (11, 'smtp_port', '', 1),
 (12, 'smtp_host', '', 1),
 (13, 'smtp_email_charset', 'utf-8', 1),
@@ -1679,7 +1752,7 @@ INSERT INTO `tbloptions` (`id`, `name`, `value`, `autoload`) VALUES
 (89, 'show_status_on_pdf_ei', '1', 1),
 (90, 'email_piping_only_replies', '0', 1),
 (91, 'email_piping_only_registered', '0', 1),
-(92, 'default_view_calendar', 'month', 1),
+(92, 'default_view_calendar', 'dayGridMonth', 1),
 (93, 'email_piping_default_priority', '2', 1),
 (94, 'total_to_words_lowercase', '0', 1),
 (95, 'show_tax_per_item', '1', 1),
@@ -1770,129 +1843,135 @@ INSERT INTO `tbloptions` (`id`, `name`, `value`, `autoload`) VALUES
 (180, 'show_pdf_signature_invoice', '1', 0),
 (181, 'show_pdf_signature_estimate', '1', 0),
 (182, 'signature_image', '', 0),
-(183, 'scroll_responsive_tables', '0', 1),
-(184, 'email_footer', '</td>\r\n                             </tr>\r\n                           </table>\r\n                         </td>\r\n                       </tr>\r\n                       <!-- END MAIN CONTENT AREA -->\r\n                     </table>\r\n                     <!-- START FOOTER -->\r\n                     <div class=\"footer\">\r\n                      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\r\n                        <tr>\r\n                          <td class=\"content-block\">\r\n                            <span>{companyname}</span>\r\n                          </td>\r\n                        </tr>\r\n                      </table>\r\n                    </div>\r\n                    <!-- END FOOTER -->\r\n                    <!-- END CENTERED WHITE CONTAINER -->\r\n                  </div>\r\n                </td>\r\n                <td>&nbsp;</td>\r\n              </tr>\r\n            </table>\r\n            </body>\r\n            </html>', 1),
-(185, 'exclude_proposal_from_client_area_with_draft_status', '1', 1),
-(186, 'pusher_app_key', '', 1),
-(187, 'pusher_app_secret', '', 1),
-(188, 'pusher_app_id', '', 1),
-(189, 'pusher_realtime_notifications', '0', 1),
-(190, 'pdf_format_statement', 'A4-PORTRAIT', 1),
-(191, 'pusher_cluster', '', 1),
-(192, 'show_table_export_button', 'to_all', 1),
-(193, 'allow_staff_view_proposals_assigned', '1', 1),
-(194, 'show_cloudflare_notice', '1', 0),
-(195, 'task_modal_class', 'modal-lg', 1),
-(196, 'lead_modal_class', 'modal-lg', 1),
-(197, 'show_timesheets_overview_all_members_notice_admins', '1', 0),
-(198, 'desktop_notifications', '0', 1),
-(199, 'hide_notified_reminders_from_calendar', '1', 0),
-(200, 'customer_info_format', '{company_name}<br />\r\r\n{street}<br />\r\r\n{city} {state}<br />\r\r\n{country_code} {zip_code}<br />\r\r\n{vat_number_with_label}', 0),
-(201, 'timer_started_change_status_in_progress', '1', 0),
-(202, 'default_ticket_reply_status', '3', 1),
-(203, 'default_task_status', 'auto', 1),
-(204, 'email_queue_skip_with_attachments', '1', 1),
-(205, 'email_queue_enabled', '0', 1),
-(206, 'last_email_queue_retry', '', 1),
-(207, 'auto_dismiss_desktop_notifications_after', '0', 1),
-(208, 'proposal_info_format', '{proposal_to}<br />\r\r\n{address}<br />\r\r\n{city} {state}<br />\r\r\n{country_code} {zip_code}<br />\r\r\n{phone}<br />\r\r\n{email}', 0),
-(209, 'ticket_replies_order', 'asc', 1),
-(210, 'new_recurring_invoice_action', 'generate_and_send', 0),
-(211, 'bcc_emails', '', 0),
-(212, 'email_templates_language_checks', '', 0),
-(213, 'proposal_accept_identity_confirmation', '1', 0),
-(214, 'estimate_accept_identity_confirmation', '1', 0),
-(215, 'new_task_auto_follower_current_member', '0', 1),
-(216, 'task_biillable_checked_on_creation', '1', 1),
-(217, 'predefined_clientnote_credit_note', '', 1),
-(218, 'predefined_terms_credit_note', '', 1),
-(219, 'next_credit_note_number', '1', 1),
-(220, 'credit_note_prefix', 'CN-', 1),
-(221, 'credit_note_number_decrement_on_delete', '1', 1),
-(222, 'pdf_format_credit_note', 'A4-PORTRAIT', 1),
-(223, 'show_pdf_signature_credit_note', '1', 0),
-(224, 'show_credit_note_reminders_on_calendar', '1', 1),
-(225, 'show_amount_due_on_invoice', '1', 1),
-(226, 'show_total_paid_on_invoice', '1', 1),
-(227, 'show_credits_applied_on_invoice', '1', 1),
-(228, 'staff_members_create_inline_lead_status', '1', 1),
-(229, 'staff_members_create_inline_customer_groups', '1', 1),
-(230, 'staff_members_create_inline_ticket_services', '1', 1),
-(231, 'staff_members_save_tickets_predefined_replies', '1', 1),
-(232, 'staff_members_create_inline_contract_types', '1', 1),
-(233, 'staff_members_create_inline_expense_categories', '1', 1),
-(234, 'show_project_on_credit_note', '1', 1),
-(235, 'proposals_auto_operations_hour', '21', 1),
-(236, 'estimates_auto_operations_hour', '21', 1),
-(237, 'contracts_auto_operations_hour', '21', 1),
-(238, 'credit_note_number_format', '1', 1),
-(239, 'allow_non_admin_members_to_import_leads', '0', 1),
-(240, 'e_sign_legal_text', 'By clicking on \"Sign\", I consent to be legally bound by this electronic representation of my signature.', 1),
-(241, 'show_pdf_signature_contract', '1', 1),
-(242, 'view_contract_only_logged_in', '0', 1),
-(243, 'show_subscriptions_in_customers_area', '1', 1),
-(244, 'calendar_only_assigned_tasks', '0', 1),
-(245, 'after_subscription_payment_captured', 'send_invoice_and_receipt', 1),
-(246, 'mail_engine', 'phpmailer', 1),
-(247, 'gdpr_enable_terms_and_conditions', '0', 1),
-(248, 'privacy_policy', '', 1),
-(249, 'terms_and_conditions', '', 1),
-(250, 'gdpr_enable_terms_and_conditions_lead_form', '0', 1),
-(251, 'gdpr_enable_terms_and_conditions_ticket_form', '0', 1),
-(252, 'gdpr_contact_enable_right_to_be_forgotten', '0', 1),
-(253, 'show_gdpr_in_customers_menu', '1', 1),
-(254, 'show_gdpr_link_in_footer', '1', 1),
-(255, 'enable_gdpr', '0', 1),
-(256, 'gdpr_on_forgotten_remove_invoices_credit_notes', '0', 1),
-(257, 'gdpr_on_forgotten_remove_estimates', '0', 1),
-(258, 'gdpr_enable_consent_for_contacts', '0', 1),
-(259, 'gdpr_consent_public_page_top_block', '', 1),
-(260, 'gdpr_page_top_information_block', '', 1),
-(261, 'gdpr_enable_lead_public_form', '0', 1),
-(262, 'gdpr_show_lead_custom_fields_on_public_form', '0', 1),
-(263, 'gdpr_lead_attachments_on_public_form', '0', 1),
-(264, 'gdpr_enable_consent_for_leads', '0', 1),
-(265, 'gdpr_lead_enable_right_to_be_forgotten', '0', 1),
-(266, 'allow_staff_view_invoices_assigned', '1', 1),
-(267, 'gdpr_data_portability_leads', '0', 1),
-(268, 'gdpr_lead_data_portability_allowed', '', 1),
-(269, 'gdpr_contact_data_portability_allowed', '', 1),
-(270, 'gdpr_data_portability_contacts', '0', 1),
-(271, 'allow_staff_view_estimates_assigned', '1', 1),
-(272, 'gdpr_after_lead_converted_delete', '0', 1),
-(273, 'gdpr_show_terms_and_conditions_in_footer', '0', 1),
-(274, 'save_last_order_for_tables', '0', 1),
-(275, 'company_logo_dark', '', 1),
-(276, 'customers_register_require_confirmation', '0', 1),
-(277, 'allow_non_admin_staff_to_delete_ticket_attachments', '0', 1),
-(278, 'receive_notification_on_new_ticket_replies', '1', 0),
-(279, 'google_client_id', '', 1),
-(280, 'enable_google_picker', '1', 1),
-(281, 'show_ticket_reminders_on_calendar', '1', 1),
-(282, 'ticket_import_reply_only', '0', 1),
-(283, 'visible_customer_profile_tabs', 'all', 0),
-(284, 'show_project_on_invoice', '1', 1),
-(285, 'show_project_on_estimate', '1', 1),
-(286, 'staff_members_create_inline_lead_source', '1', 1),
-(287, 'lead_unique_validation', '[\"email\"]', 1),
-(288, 'last_upgrade_copy_data', '', 1),
-(289, 'custom_js_admin_scripts', '', 1),
-(290, 'custom_js_customer_scripts', '0', 1),
-(291, 'stripe_webhook_id', '', 1),
-(292, 'stripe_webhook_signing_secret', '', 1),
-(293, 'stripe_ideal_webhook_id', '', 1),
-(294, 'stripe_ideal_webhook_signing_secret', '', 1),
-(295, 'show_php_version_notice', '1', 0),
-(296, 'recaptcha_ignore_ips', '', 1),
-(297, 'show_task_reminders_on_calendar', '1', 1),
-(298, 'customer_settings', 'true', 1),
-(299, 'tasks_reminder_notification_hour', '21', 1),
-(300, 'allow_primary_contact_to_manage_other_contacts', '0', 1),
-(301, 'items_table_amounts_exclude_currency_symbol', '1', 1),
-(302, 'round_off_task_timer_option', '0', 1),
-(303, 'round_off_task_timer_time', '5', 1),
-(304, 'bitly_access_token', '', 1),
-(305, 'upgraded_from_version', '', 0);
+(183, 'email_footer', '</td>\r\n                             </tr>\r\n                           </table>\r\n                         </td>\r\n                       </tr>\r\n                       <!-- END MAIN CONTENT AREA -->\r\n                     </table>\r\n                     <!-- START FOOTER -->\r\n                     <div class=\"footer\">\r\n                      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\r\n                        <tr>\r\n                          <td class=\"content-block\">\r\n                            <span>{companyname}</span>\r\n                          </td>\r\n                        </tr>\r\n                      </table>\r\n                    </div>\r\n                    <!-- END FOOTER -->\r\n                    <!-- END CENTERED WHITE CONTAINER -->\r\n                  </div>\r\n                </td>\r\n                <td>&nbsp;</td>\r\n              </tr>\r\n            </table>\r\n            </body>\r\n            </html>', 1),
+(184, 'exclude_proposal_from_client_area_with_draft_status', '1', 1),
+(185, 'pusher_app_key', '', 1),
+(186, 'pusher_app_secret', '', 1),
+(187, 'pusher_app_id', '', 1),
+(188, 'pusher_realtime_notifications', '0', 1),
+(189, 'pdf_format_statement', 'A4-PORTRAIT', 1),
+(190, 'pusher_cluster', '', 1),
+(191, 'show_table_export_button', 'to_all', 1),
+(192, 'allow_staff_view_proposals_assigned', '1', 1),
+(193, 'show_cloudflare_notice', '1', 0),
+(194, 'task_modal_class', 'modal-lg', 1),
+(195, 'lead_modal_class', 'modal-lg', 1),
+(196, 'show_timesheets_overview_all_members_notice_admins', '1', 0),
+(197, 'desktop_notifications', '0', 1),
+(198, 'hide_notified_reminders_from_calendar', '1', 0),
+(199, 'customer_info_format', '{company_name}<br />\r\n{street}<br />\r\n{city} {state}<br />\r\n{country_code} {zip_code}<br />\r\n{vat_number_with_label}', 0),
+(200, 'timer_started_change_status_in_progress', '1', 0),
+(201, 'default_ticket_reply_status', '3', 1),
+(202, 'default_task_status', 'auto', 1),
+(203, 'email_queue_skip_with_attachments', '1', 1),
+(204, 'email_queue_enabled', '0', 1),
+(205, 'last_email_queue_retry', '', 1),
+(206, 'auto_dismiss_desktop_notifications_after', '0', 1),
+(207, 'proposal_info_format', '{proposal_to}<br />\r\n{address}<br />\r\n{city} {state}<br />\r\n{country_code} {zip_code}<br />\r\n{phone}<br />\r\n{email}', 0),
+(208, 'ticket_replies_order', 'asc', 1),
+(209, 'new_recurring_invoice_action', 'generate_and_send', 0),
+(210, 'bcc_emails', '', 0),
+(211, 'email_templates_language_checks', '', 0),
+(212, 'proposal_accept_identity_confirmation', '1', 0),
+(213, 'estimate_accept_identity_confirmation', '1', 0),
+(214, 'new_task_auto_follower_current_member', '0', 1),
+(215, 'task_biillable_checked_on_creation', '1', 1),
+(216, 'predefined_clientnote_credit_note', '', 1),
+(217, 'predefined_terms_credit_note', '', 1),
+(218, 'next_credit_note_number', '1', 1),
+(219, 'credit_note_prefix', 'CN-', 1),
+(220, 'credit_note_number_decrement_on_delete', '1', 1),
+(221, 'pdf_format_credit_note', 'A4-PORTRAIT', 1),
+(222, 'show_pdf_signature_credit_note', '1', 0),
+(223, 'show_credit_note_reminders_on_calendar', '1', 1),
+(224, 'show_amount_due_on_invoice', '1', 1),
+(225, 'show_total_paid_on_invoice', '1', 1),
+(226, 'show_credits_applied_on_invoice', '1', 1),
+(227, 'staff_members_create_inline_lead_status', '1', 1),
+(228, 'staff_members_create_inline_customer_groups', '1', 1),
+(229, 'staff_members_create_inline_ticket_services', '1', 1),
+(230, 'staff_members_save_tickets_predefined_replies', '1', 1),
+(231, 'staff_members_create_inline_contract_types', '1', 1),
+(232, 'staff_members_create_inline_expense_categories', '1', 1),
+(233, 'show_project_on_credit_note', '1', 1),
+(234, 'proposals_auto_operations_hour', '21', 1),
+(235, 'estimates_auto_operations_hour', '21', 1),
+(236, 'contracts_auto_operations_hour', '21', 1),
+(237, 'credit_note_number_format', '1', 1),
+(238, 'allow_non_admin_members_to_import_leads', '0', 1),
+(239, 'e_sign_legal_text', 'By clicking on \"Sign\", I consent to be legally bound by this electronic representation of my signature.', 1),
+(240, 'show_pdf_signature_contract', '1', 1),
+(241, 'view_contract_only_logged_in', '0', 1),
+(242, 'show_subscriptions_in_customers_area', '1', 1),
+(243, 'calendar_only_assigned_tasks', '0', 1),
+(244, 'after_subscription_payment_captured', 'send_invoice_and_receipt', 1),
+(245, 'mail_engine', 'phpmailer', 1),
+(246, 'gdpr_enable_terms_and_conditions', '0', 1),
+(247, 'privacy_policy', '', 1),
+(248, 'terms_and_conditions', '', 1),
+(249, 'gdpr_enable_terms_and_conditions_lead_form', '0', 1),
+(250, 'gdpr_enable_terms_and_conditions_ticket_form', '0', 1),
+(251, 'gdpr_contact_enable_right_to_be_forgotten', '0', 1),
+(252, 'show_gdpr_in_customers_menu', '1', 1),
+(253, 'show_gdpr_link_in_footer', '1', 1),
+(254, 'enable_gdpr', '0', 1),
+(255, 'gdpr_on_forgotten_remove_invoices_credit_notes', '0', 1),
+(256, 'gdpr_on_forgotten_remove_estimates', '0', 1),
+(257, 'gdpr_enable_consent_for_contacts', '0', 1),
+(258, 'gdpr_consent_public_page_top_block', '', 1),
+(259, 'gdpr_page_top_information_block', '', 1),
+(260, 'gdpr_enable_lead_public_form', '0', 1),
+(261, 'gdpr_show_lead_custom_fields_on_public_form', '0', 1),
+(262, 'gdpr_lead_attachments_on_public_form', '0', 1),
+(263, 'gdpr_enable_consent_for_leads', '0', 1),
+(264, 'gdpr_lead_enable_right_to_be_forgotten', '0', 1),
+(265, 'allow_staff_view_invoices_assigned', '1', 1),
+(266, 'gdpr_data_portability_leads', '0', 1),
+(267, 'gdpr_lead_data_portability_allowed', '', 1),
+(268, 'gdpr_contact_data_portability_allowed', '', 1),
+(269, 'gdpr_data_portability_contacts', '0', 1),
+(270, 'allow_staff_view_estimates_assigned', '1', 1),
+(271, 'gdpr_after_lead_converted_delete', '0', 1),
+(272, 'gdpr_show_terms_and_conditions_in_footer', '0', 1),
+(273, 'save_last_order_for_tables', '0', 1),
+(274, 'company_logo_dark', '', 1),
+(275, 'customers_register_require_confirmation', '0', 1),
+(276, 'allow_non_admin_staff_to_delete_ticket_attachments', '0', 1),
+(277, 'receive_notification_on_new_ticket_replies', '1', 0),
+(278, 'google_client_id', '', 1),
+(279, 'enable_google_picker', '1', 1),
+(280, 'show_ticket_reminders_on_calendar', '1', 1),
+(281, 'ticket_import_reply_only', '0', 1),
+(282, 'visible_customer_profile_tabs', 'all', 0),
+(283, 'show_project_on_invoice', '1', 1),
+(284, 'show_project_on_estimate', '1', 1),
+(285, 'staff_members_create_inline_lead_source', '1', 1),
+(286, 'lead_unique_validation', '[\"email\"]', 1),
+(287, 'last_upgrade_copy_data', '', 1),
+(288, 'custom_js_admin_scripts', '', 1),
+(289, 'custom_js_customer_scripts', '0', 1),
+(290, 'stripe_webhook_id', '', 1),
+(291, 'stripe_webhook_signing_secret', '', 1),
+(292, 'stripe_ideal_webhook_id', '', 1),
+(293, 'stripe_ideal_webhook_signing_secret', '', 1),
+(294, 'show_php_version_notice', '1', 0),
+(295, 'recaptcha_ignore_ips', '', 1),
+(296, 'show_task_reminders_on_calendar', '1', 1),
+(297, 'customer_settings', 'true', 1),
+(298, 'tasks_reminder_notification_hour', '21', 1),
+(299, 'allow_primary_contact_to_manage_other_contacts', '0', 1),
+(300, 'items_table_amounts_exclude_currency_symbol', '1', 1),
+(301, 'round_off_task_timer_option', '0', 1),
+(302, 'round_off_task_timer_time', '5', 1),
+(303, 'bitly_access_token', '', 1),
+(304, 'enable_support_menu_badges', '0', 1),
+(305, 'attach_invoice_to_payment_receipt_email', '0', 1),
+(306, 'invoice_due_notice_before', '2', 1),
+(307, 'invoice_due_notice_resend_after', '0', 1),
+(308, '_leads_settings', 'true', 1),
+(309, 'show_estimate_request_in_customers_area', '0', 1),
+(310, 'gdpr_enable_terms_and_conditions_estimate_request_form', '0', 1),
+(311, 'upgraded_from_version', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1991,7 +2070,9 @@ CREATE TABLE `tblprojects` (
   `project_cost` decimal(15,2) DEFAULT NULL,
   `project_rate_per_hour` decimal(15,2) DEFAULT NULL,
   `estimated_hours` decimal(15,2) DEFAULT NULL,
-  `addedfrom` int(11) NOT NULL
+  `addedfrom` int(11) NOT NULL,
+  `contact_notification` int(11) DEFAULT '1',
+  `notify_contacts` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -2246,6 +2327,13 @@ CREATE TABLE `tblsessions` (
   `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `tblsessions`
+--
+
+INSERT INTO `tblsessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('l54cugs2kvpo99vksv5211kj4ont5i7c', '192.168.10.1', 1619542236, 0x5f5f63695f6c6173745f726567656e65726174657c693a313631393534323232393b73746166665f757365725f69647c733a313a2231223b73746166665f6c6f676765645f696e7c623a313b73657475702d6d656e752d6f70656e7c733a303a22223b);
+
 -- --------------------------------------------------------
 
 --
@@ -2485,7 +2573,8 @@ CREATE TABLE `tbltask_checklist_items` (
   `dateadded` datetime NOT NULL,
   `addedfrom` int(11) NOT NULL,
   `finished_from` int(11) DEFAULT '0',
-  `list_order` int(11) NOT NULL DEFAULT '0'
+  `list_order` int(11) NOT NULL DEFAULT '0',
+  `assigned` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3010,6 +3099,24 @@ ALTER TABLE `tblestimates`
   ADD KEY `project_id` (`project_id`),
   ADD KEY `sale_agent` (`sale_agent`),
   ADD KEY `status` (`status`);
+
+--
+-- Indexes for table `tblestimate_requests`
+--
+ALTER TABLE `tblestimate_requests`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tblestimate_request_forms`
+--
+ALTER TABLE `tblestimate_request_forms`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tblestimate_request_status`
+--
+ALTER TABLE `tblestimate_request_status`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tblevents`
@@ -3720,13 +3827,31 @@ ALTER TABLE `tbldismissed_announcements`
 -- AUTO_INCREMENT for table `tblemailtemplates`
 --
 ALTER TABLE `tblemailtemplates`
-  MODIFY `emailtemplateid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `emailtemplateid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `tblestimates`
 --
 ALTER TABLE `tblestimates`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tblestimate_requests`
+--
+ALTER TABLE `tblestimate_requests`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tblestimate_request_forms`
+--
+ALTER TABLE `tblestimate_request_forms`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tblestimate_request_status`
+--
+ALTER TABLE `tblestimate_request_status`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tblevents`
@@ -3930,7 +4055,7 @@ ALTER TABLE `tblnotifications`
 -- AUTO_INCREMENT for table `tbloptions`
 --
 ALTER TABLE `tbloptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=306;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=312;
 
 --
 -- AUTO_INCREMENT for table `tblpayment_modes`

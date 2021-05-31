@@ -9,6 +9,14 @@
             <i class="<?php echo $tab['icon']; ?> menu-icon" aria-hidden="true"></i>
         <?php } ?>
         <?php echo $tab['name']; ?>
+        <?php if (isset($tab['badge'], $tab['badge']['value']) && !empty($tab['badge'])) {?>
+          <span class="badge pull-right 
+            <?=isset($tab['badge']['type']) &&  $tab['badge']['type'] != '' ? "bg-{$tab['badge']['type']}" : 'bg-info' ?>"
+              <?=(isset($tab['badge']['type']) &&  $tab['badge']['type'] == '') ||
+                      isset($tab['badge']['color']) ? "style='background-color: {$tab['badge']['color']}'" : '' ?>>
+              <?= $tab['badge']['value'] ?>
+          </span>
+        <?php } ?>
       </a>
     </li>
   <?php } ?>

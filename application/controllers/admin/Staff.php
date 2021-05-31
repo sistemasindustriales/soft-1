@@ -205,6 +205,8 @@ class Staff extends AdminController
     /* When staff edit his profile */
     public function edit_profile()
     {
+        hooks()->do_action('edit_logged_in_staff_profile');
+
         if ($this->input->post()) {
             handle_staff_profile_image_upload();
             $data = $this->input->post();
@@ -432,6 +434,16 @@ class Staff extends AdminController
 
             echo json_encode($result);
             die;
+        }
+    }
+
+    public function save_completed_checklist_visibility()
+    {
+        hooks()->do_action('before_save_completed_checklist_visibility');
+
+        $post_data = $this->input->post();
+        if (is_numeric($post_data['task_id'])) {
+            update_staff_meta(get_staff_user_id(), 'task-hide-completed-items-'. $post_data['task_id'], $post_data['hideCompleted']);
         }
     }
 }

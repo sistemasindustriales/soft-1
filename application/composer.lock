@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "401a10d316eac11e6d915bd1759fb085",
+    "content-hash": "46ee0214ffee70f0697b91630ed0b928",
     "packages": [
         {
             "name": "authorizenet/authorizenet",
@@ -137,12 +137,12 @@
             "version": "v1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/clue/php-stream-filter.git",
+                "url": "https://github.com/clue/stream-filter.git",
                 "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-stream-filter/zipball/aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
+                "url": "https://api.github.com/repos/clue/stream-filter/zipball/aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
                 "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
                 "shasum": ""
             },
@@ -1267,54 +1267,6 @@
             "time": "2020-11-28T14:25:28+00:00"
         },
         {
-            "name": "nuovo/spreadsheet-reader",
-            "version": "0.5.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nuovo/spreadsheet-reader.git",
-                "reference": "f6bd49d101042eaa71b0fbd82e7a57e5a276dc3d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nuovo/spreadsheet-reader/zipball/f6bd49d101042eaa71b0fbd82e7a57e5a276dc3d",
-                "reference": "f6bd49d101042eaa71b0fbd82e7a57e5a276dc3d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-zip": "*",
-                "php": ">= 5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "./"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Martins Pilsetnieks",
-                    "email": "pilsetnieks@gmail.com",
-                    "homepage": "http://www.nuovo.lv/"
-                }
-            ],
-            "description": "Spreadsheet reader library for Excel, OpenOffice and structured text files",
-            "homepage": "https://github.com/nuovo/spreadsheet-reader",
-            "keywords": [
-                "OpenOffice",
-                "csv",
-                "excel",
-                "ods",
-                "spreadsheet",
-                "xls",
-                "xlsx"
-            ],
-            "time": "2015-04-30T00:00:00+00:00"
-        },
-        {
             "name": "omnipay/braintree",
             "version": "dev-master",
             "source": {
@@ -1461,30 +1413,33 @@
         },
         {
             "name": "omnipay/mollie",
-            "version": "v4.0.1",
+            "version": "v5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/omnipay-mollie.git",
-                "reference": "3fd82055bff24dfdd225470acccce1853095ca37"
+                "reference": "89d6436737bc82c636b2862952dbdd53b993d359"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-mollie/zipball/3fd82055bff24dfdd225470acccce1853095ca37",
-                "reference": "3fd82055bff24dfdd225470acccce1853095ca37",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-mollie/zipball/89d6436737bc82c636b2862952dbdd53b993d359",
+                "reference": "89d6436737bc82c636b2862952dbdd53b993d359",
                 "shasum": ""
             },
             "require": {
-                "omnipay/common": "^3"
+                "omnipay/common": "^3.0.1"
             },
             "require-dev": {
-                "omnipay/tests": "^3",
+                "jakub-onderka/php-parallel-lint": "^1",
+                "omnipay/tests": "^3.1",
+                "overtrue/phplint": "^1",
+                "phpmd/phpmd": "^2",
                 "phpro/grumphp": "^0.14",
                 "squizlabs/php_codesniffer": "^3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0.x-dev"
+                    "dev-master": "5.1.x-dev"
                 }
             },
             "autoload": {
@@ -1520,7 +1475,7 @@
                 "pay",
                 "payment"
             ],
-            "time": "2018-05-15T07:54:15+00:00"
+            "time": "2021-03-05T14:51:11+00:00"
         },
         {
             "name": "omnipay/paypal",
@@ -3050,16 +3005,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.20.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531"
+                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/39d483bdf39be819deabf04ec872eb0b2410b531",
-                "reference": "39d483bdf39be819deabf04ec872eb0b2410b531",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
+                "reference": "f377a3dd1fde44d37b9831d68dc8dea3ffd28e13",
                 "shasum": ""
             },
             "require": {
@@ -3071,7 +3026,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.20-dev"
+                    "dev-main": "1.22-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -3109,7 +3064,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-10-23T14:02:19+00:00"
+            "time": "2021-01-07T16:49:33+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -3375,16 +3330,16 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.3.5",
+            "version": "6.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "19a535eaa7fb1c1cac499109deeb1a7a201b4549"
+                "reference": "5ba838befdb37ef06a16d9f716f35eb03cb1b329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/19a535eaa7fb1c1cac499109deeb1a7a201b4549",
-                "reference": "19a535eaa7fb1c1cac499109deeb1a7a201b4549",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/5ba838befdb37ef06a16d9f716f35eb03cb1b329",
+                "reference": "5ba838befdb37ef06a16d9f716f35eb03cb1b329",
                 "shasum": ""
             },
             "require": {
@@ -3433,7 +3388,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2020-02-14T14:20:12+00:00"
+            "time": "2021-03-27T16:00:33+00:00"
         },
         {
             "name": "twilio/sdk",

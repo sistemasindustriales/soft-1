@@ -442,7 +442,11 @@ class Tasks extends AdminController
         $data['staff']              = $this->staff_model->get('', ['active' => 1]);
         $data['reminders']          = $this->tasks_model->get_reminders($taskid);
 
-        $data['staff_reminders'] = $this->tasks_model->get_staff_members_that_can_access_task($taskid);
+        $data['task_staff_members']   = $this->tasks_model->get_staff_members_that_can_access_task($taskid);
+        // For backward compatibilities
+        $data['staff_reminders'] = $data['task_staff_members'];
+
+        $data['hide_completed_items'] = get_staff_meta(get_staff_user_id(), 'task-hide-completed-items-' . $taskid);
 
         $data['project_deadline'] = null;
         if ($task->rel_type == 'project') {
@@ -537,9 +541,12 @@ class Tasks extends AdminController
     {
         if ($this->input->is_ajax_request()) {
             if ($this->input->post()) {
-                $post_data          = $this->input->post();
-                $data['task_id']    = $post_data['taskid'];
-                $data['checklists'] = $this->tasks_model->get_checklist_items($post_data['taskid']);
+                $post_data                    = $this->input->post();
+                $data['task_id']              = $post_data['taskid'];
+                $data['checklists']           = $this->tasks_model->get_checklist_items($post_data['taskid']);
+                $data['task_staff_members']   = $this->tasks_model->get_staff_members_that_can_access_task($data['task_id']);
+                $data['hide_completed_items'] = get_staff_meta(get_staff_user_id(), 'task-hide-completed-items-' . $data['task_id']);
+
                 $this->load->view('admin/tasks/checklist_items_template', $data);
             }
         }
@@ -706,7 +713,10 @@ class Tasks extends AdminController
     /* Add new task follower / ajax */
     public function add_task_followers()
     {
-        if (has_permission('tasks', '', 'edit') || has_permission('tasks', '', 'create')) {
+        $task = $this->tasks_model->get($this->input->post('taskid'));
+
+        if (staff_can('edit', 'tasks') ||
+                ($task->current_user_is_creator && staff_can('create', 'tasks'))) {
             echo json_encode([
                 'success'  => $this->tasks_model->add_task_followers($this->input->post()),
                 'taskHtml' => $this->get_task_data($this->input->post('taskid'), true),
@@ -717,7 +727,10 @@ class Tasks extends AdminController
     /* Add task assignees / ajax */
     public function add_task_assignees()
     {
-        if (has_permission('tasks', '', 'edit') || has_permission('tasks', '', 'create')) {
+        $task = $this->tasks_model->get($this->input->post('taskid'));
+
+        if (staff_can('edit', 'tasks') ||
+                ($task->current_user_is_creator && staff_can('create', 'tasks'))) {
             echo json_encode([
                 'success'  => $this->tasks_model->add_task_assignees($this->input->post()),
                 'taskHtml' => $this->get_task_data($this->input->post('taskid'), true),
@@ -757,7 +770,10 @@ class Tasks extends AdminController
     /* Remove assignee / ajax */
     public function remove_assignee($id, $taskid)
     {
-        if (has_permission('tasks', '', 'edit') && has_permission('tasks', '', 'create')) {
+        $task = $this->tasks_model->get($taskid);
+
+        if (staff_can('edit', 'tasks') ||
+                ($task->current_user_is_creator && staff_can('create', 'tasks'))) {
             $success = $this->tasks_model->remove_assignee($id, $taskid);
             $message = '';
             if ($success) {
@@ -774,7 +790,10 @@ class Tasks extends AdminController
     /* Remove task follower / ajax */
     public function remove_follower($id, $taskid)
     {
-        if (has_permission('tasks', '', 'edit') && has_permission('tasks', '', 'create')) {
+        $task = $this->tasks_model->get($taskid);
+
+        if (staff_can('edit', 'tasks') ||
+                ($task->current_user_is_creator && staff_can('create', 'tasks'))) {
             $success = $this->tasks_model->remove_follower($id, $taskid);
             $message = '';
             if ($success) {
@@ -1073,6 +1092,7 @@ class Tasks extends AdminController
             $assignees = $this->input->post('assignees');
             $milestone = $this->input->post('milestone');
             $priority  = $this->input->post('priority');
+            $billable  = $this->input->post('billable');
             $is_admin  = is_admin();
             if (is_array($ids)) {
                 foreach ($ids as $id) {
@@ -1092,14 +1112,21 @@ class Tasks extends AdminController
                                 $this->tasks_model->mark_as($status, $id);
                             }
                         }
-                        if ($priority || $milestone) {
+                        if ($priority || $milestone || ($billable === 'billable' || $billable === 'not_billable')) {
                             $update = [];
+
                             if ($priority) {
                                 $update['priority'] = $priority;
                             }
+
                             if ($milestone) {
                                 $update['milestone'] = $milestone;
                             }
+
+                            if ($billable) {
+                                $update['billable'] = $billable === 'billable' ? 1 : 0;
+                            }
+
                             $this->db->where('id', $id);
                             $this->db->update(db_prefix() . 'tasks', $update);
                         }
@@ -1193,6 +1220,20 @@ class Tasks extends AdminController
             }, $members);
 
             echo json_encode($members);
+        }
+    }
+
+    public function save_checklist_assigned_staff()
+    {
+        if ($this->input->post() && $this->input->is_ajax_request()) {
+            $payload = $this->input->post();
+            $item    = $this->tasks_model->get_checklist_item($payload['checklistId']);
+            if ($item->addedfrom == get_staff_user_id() || is_admin()) {
+                $this->tasks_model->update_checklist_assigned_staff($payload);
+                die;
+            }
+
+            ajax_access_denied();
         }
     }
 }
