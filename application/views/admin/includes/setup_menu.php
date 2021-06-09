@@ -4,7 +4,7 @@
     <ul class="nav metis-menu" id="setup-menu">
         <li>
             <a class="close-customizer"><i class="fa fa-close"></i></a>
-            <span class="text-left bold customizer-heading"><?php echo _l('setting_bar_heading'); ?></span>
+            <span style="color:grey;"><?php echo _l('setting_bar_heading'); ?></span>
         </li>
         <?php
         $totalSetupMenuItems = 0;

@@ -6,12 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
-
     <title><?php echo isset($title) ? $title : get_option('companyname'); ?></title>
-
     <?php echo app_compile_css(); ?>
     <?php render_admin_js_variables(); ?>
-
     <script>
         var totalUnreadNotifications = <?php echo $current_user->total_unread_notifications; ?>,
         proposalsTemplates = <?php echo json_encode(get_proposal_templates()); ?>,

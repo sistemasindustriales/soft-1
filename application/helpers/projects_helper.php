@@ -46,7 +46,7 @@ function app_init_project_tabs()
 
     $CI->app_tabs->add_project_tab('project_tasks', [
         'name'                      => _l('tasks'),
-        'icon'                      => 'fa fa-check-circle',
+        'icon'                      => 'fa fa-bell',
         'view'                      => 'admin/projects/project_tasks',
         'position'                  => 10,
         'linked_to_customer_option' => ['view_tasks'],
@@ -94,7 +94,7 @@ function app_init_project_tabs()
 
     $CI->app_tabs->add_project_tab('project_tickets', [
         'name'     => _l('project_tickets'),
-        'icon'     => 'fa fa-life-ring',
+        'icon'     => 'fa fa-file-text',
         'view'     => 'admin/projects/project_tickets',
         'position' => 40,
         'visible'  => (get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member(),
@@ -110,7 +110,7 @@ function app_init_project_tabs()
 
     $CI->app_tabs->add_project_tab('sales', [
         'name'     => _l('sales_string'),
-        'icon'     => 'fa fa-balance-scale',
+        'icon'     => 'fa fa-shopping-cart',
         'position' => 50,
         'collapse' => true,
         'visible'  => (has_permission('estimates', '', 'view') || has_permission('estimates', '', 'view_own') || (get_option('allow_staff_view_estimates_assigned') == 1 && staff_has_assigned_estimates()))

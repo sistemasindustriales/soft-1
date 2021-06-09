@@ -10,7 +10,7 @@
                <ul class="nav nav-tabs nav-tabs-horizontal" role="tablist">
                   <li role="presentation" class="active">
                      <a href="#home_tab_tasks" aria-controls="home_tab_tasks" role="tab" data-toggle="tab">
-                        <i class="fa fa-tasks menu-icon"></i> <?php echo _l('home_my_tasks'); ?>
+                        <i class="fa fa-bell menu-icon"></i> <?php echo _l('home_my_tasks'); ?>
                      </a>
                   </li>
                   <li role="presentation">
@@ -37,7 +37,7 @@
                   <?php if((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member()){ ?>
                   <li role="presentation">
                      <a href="#home_tab_tickets" onclick="init_table_tickets(true);" aria-controls="home_tab_tickets" role="tab" data-toggle="tab">
-                     <i class="fa fa-ticket menu-icon"></i> <?php echo _l('home_tickets'); ?>
+                     <i class="fa fa-file-text menu-icon"></i> <?php echo _l('home_tickets'); ?>
                      </a>
                   </li>
                   <?php } ?>
@@ -50,11 +50,7 @@
                   </li>
                   <?php } ?>
                   <?php if(is_admin()){ ?>
-                  <li role="presentation">
-                     <a href="#home_tab_activity" aria-controls="home_tab_activity" role="tab" data-toggle="tab">
-                     <i class="fa fa-window-maximize menu-icon"></i> <?php echo _l('home_latest_activity'); ?>
-                     </a>
-                  </li>
+                 
                   <?php } ?>
                   <?php hooks()->do_action('after_user_data_widget_tabs'); ?>
                </ul>

@@ -144,11 +144,7 @@ function app_init_settings_tabs()
         'position' => 15,
     ]);
 
-    $CI->app_tabs->add_settings_tab('email', [
-        'name'     => _l('settings_group_email'),
-        'view'     => 'admin/settings/includes/email',
-        'position' => 20,
-    ]);
+    
 
     $CI->app_tabs->add_settings_tab('sales', [
         'name'     => _l('settings_group_sales'),
@@ -156,11 +152,7 @@ function app_init_settings_tabs()
         'position' => 25,
     ]);
 
-    $CI->app_tabs->add_settings_tab('subscriptions', [
-        'name'     => _l('subscriptions'),
-        'view'     => 'admin/settings/includes/subscriptions',
-        'position' => 30,
-    ]);
+   
 
     $CI->app_tabs->add_settings_tab('payment_gateways', [
         'name'     => _l('settings_group_online_payment_modes'),
@@ -204,11 +196,7 @@ function app_init_settings_tabs()
         'position' => 65,
     ]);
 
-    $CI->app_tabs->add_settings_tab('e_sign', [
-        'name'     => 'E-Sign',
-        'view'     => 'admin/settings/includes/e_sign',
-        'position' => 70,
-    ]);
+    
 
     $CI->app_tabs->add_settings_tab('cronjob', [
         'name'     => _l('settings_group_cronjob'),
@@ -222,17 +210,9 @@ function app_init_settings_tabs()
         'position' => 80,
     ]);
 
-    $CI->app_tabs->add_settings_tab('pusher', [
-        'name'     => 'Pusher.com',
-        'view'     => 'admin/settings/includes/pusher',
-        'position' => 85,
-    ]);
+    
 
-    $CI->app_tabs->add_settings_tab('google', [
-        'name'     => 'Google',
-        'view'     => 'admin/settings/includes/google',
-        'position' => 90,
-    ]);
+    
 
     $CI->app_tabs->add_settings_tab('misc', [
         'name'     => _l('settings_group_misc'),

@@ -2,9 +2,7 @@
 <?php init_head(); ?>
 <div id="wrapper">
     <div class="screen-options-area"></div>
-    <div class="screen-options-btn">
-        <?php echo _l('dashboard_options'); ?>
-    </div>
+
     <div class="content">
         <div class="row">
 

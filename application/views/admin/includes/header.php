@@ -1,20 +1,15 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-ob_start();
-?>
-<li id="top_search" class="dropdown" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags'); ?>">
+ob_start();?>
+<li id="top_search" class="dropdown" data-toggle="tooltip" data-placement="bottom" data-title="<?php echo _l('search_by_tags');?>">
    <input type="search" id="search_input" class="form-control" placeholder="<?php echo _l('top_search_placeholder'); ?>">
    <div id="search_results">
    </div>
    <ul class="dropdown-menu search-results animated fadeIn no-mtop search-history" id="search-history">
    </ul>
 </li>
-<li id="top_search_button">
-   <button class="btn"><i class="fa fa-search"></i></button>
-</li>
 <?php
 $top_search_area = ob_get_contents();
-ob_end_clean();
-?>
+ob_end_clean();?>
 <div id="header">
    <div class="hide-menu"><i class="fa fa-align-left"></i></div>
    <div id="logo">

@@ -6,9 +6,6 @@
 <?php echo render_textarea('description','reminder_description'); ?>
 <?php if(is_email_template_active('reminder-email-staff')) { ?>
   <div class="form-group">
-    <div class="checkbox checkbox-primary">
-      <input type="checkbox" name="notify_by_email" id="notify_by_email">
-      <label for="notify_by_email"><?php echo _l('reminder_notify_me_by_email'); ?></label>
-    </div>
+   
   </div>
 <?php } ?>

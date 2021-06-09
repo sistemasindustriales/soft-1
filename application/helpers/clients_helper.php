@@ -220,7 +220,7 @@ function app_init_customer_profile_tabs()
 
     $CI->app_tabs->add_customer_profile_tab('proposals', [
         'name'     => _l('proposals'),
-        'icon'     => 'fa fa-file-powerpoint-o',
+        'icon'     => 'fa fa-file-o',
         'view'     => 'admin/clients/groups/proposals',
         'visible'  => (has_permission('proposals', '', 'view') || has_permission('proposals', '', 'view_own') || (get_option('allow_staff_view_proposals_assigned') == 1 && staff_has_assigned_proposals())),
         'position' => 35,
@@ -242,13 +242,7 @@ function app_init_customer_profile_tabs()
         'position' => 45,
     ]);
 
-    $CI->app_tabs->add_customer_profile_tab('subscriptions', [
-        'name'     => _l('subscriptions'),
-        'icon'     => 'fa fa-repeat',
-        'view'     => 'admin/clients/groups/subscriptions',
-        'visible'  => (has_permission('subscriptions', '', 'view') || has_permission('subscriptions', '', 'view_own')),
-        'position' => 50,
-    ]);
+    
 
     $CI->app_tabs->add_customer_profile_tab('expenses', [
         'name'     => _l('expenses'),
@@ -258,13 +252,7 @@ function app_init_customer_profile_tabs()
         'position' => 55,
     ]);
 
-    $CI->app_tabs->add_customer_profile_tab('contracts', [
-        'name'     => _l('contracts'),
-        'icon'     => 'fa fa-file',
-        'view'     => 'admin/clients/groups/contracts',
-        'visible'  => (has_permission('contracts', '', 'view') || has_permission('contracts', '', 'view_own')),
-        'position' => 60,
-    ]);
+    
 
     $CI->app_tabs->add_customer_profile_tab('projects', [
         'name'     => _l('projects'),
@@ -275,14 +263,14 @@ function app_init_customer_profile_tabs()
 
     $CI->app_tabs->add_customer_profile_tab('tasks', [
         'name'     => _l('tasks'),
-        'icon'     => 'fa fa-tasks',
+        'icon'     => 'fa fa-bell',
         'view'     => 'admin/clients/groups/tasks',
         'position' => 70,
     ]);
 
     $CI->app_tabs->add_customer_profile_tab('tickets', [
         'name'     => _l('tickets'),
-        'icon'     => 'fa fa-ticket',
+        'icon'     => 'fa fa-file-text',
         'view'     => 'admin/clients/groups/tickets',
         'visible'  => ((get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member()),
         'position' => 75,
@@ -295,26 +283,16 @@ function app_init_customer_profile_tabs()
         'position' => 80,
     ]);
 
-    $CI->app_tabs->add_customer_profile_tab('vault', [
-        'name'     => _l('vault'),
-        'icon'     => 'fa fa-lock',
-        'view'     => 'admin/clients/groups/vault',
-        'position' => 85,
-    ]);
+   
 
     $CI->app_tabs->add_customer_profile_tab('reminders', [
-        'name'     => $remindersText,
+        'name'     => Recordatorios,
         'icon'     => 'fa fa-clock-o',
         'view'     => 'admin/clients/groups/reminders',
         'position' => 90,
     ]);
 
-    $CI->app_tabs->add_customer_profile_tab('map', [
-        'name'     => _l('customer_map'),
-        'icon'     => 'fa fa-map-marker',
-        'view'     => 'admin/clients/groups/map',
-        'position' => 95,
-    ]);
+    
 }
 
 /**

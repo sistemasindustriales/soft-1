@@ -43,14 +43,7 @@
                         <?php echo render_input( 'email', 'client_email',$value, 'email'); ?>
                         <?php $value=( isset($contact) ? $contact->phonenumber : ''); ?>
                         <?php echo render_input( 'phonenumber', 'client_phonenumber',$value,'text',array('autocomplete'=>'off')); ?>
-                        <div class="form-group contact-direction-option">
-                          <label for="direction"><?php echo _l('document_direction'); ?></label>
-                          <select class="selectpicker" data-none-selected-text="<?php echo _l('system_default_string'); ?>" data-width="100%" name="direction" id="direction">
-                            <option value="" <?php if(isset($contact) && empty($contact->direction)){echo 'selected';} ?>></option>
-                            <option value="ltr" <?php if(isset($contact) && $contact->direction == 'ltr'){echo 'selected';} ?>>LTR</option>
-                            <option value="rtl" <?php if(isset($contact) && $contact->direction == 'rtl'){echo 'selected';} ?>>RTL</option>
-                        </select>
-                    </div>
+                        
                     <?php $rel_id=( isset($contact) ? $contact->id : false); ?>
                     <?php echo render_custom_fields( 'contacts',$rel_id); ?>
 
@@ -101,9 +94,7 @@
                 <?php if(is_email_template_active('contact-set-password')){ ?>
                 <div class="checkbox checkbox-primary">
                     <input type="checkbox" name="send_set_password_email" id="send_set_password_email">
-                    <label for="send_set_password_email">
-                        <?php echo _l( 'client_send_set_password_email'); ?>
-                    </label>
+                   
                 </div>
                 <?php } ?>
                 <hr />
@@ -131,103 +122,11 @@
                 </div>
                 <div class="clearfix"></div>
                 <?php } ?>
-                 <hr />
-                <p class="bold"><?php echo _l('email_notifications'); ?><?php if(is_sms_trigger_active()){echo '/SMS';} ?></p>
-                <div id="contact_email_notifications">
-                <div class="col-md-6 row">
-                    <div class="row">
-                        <div class="col-md-6 mtop10 border-right">
-                            <span><?php echo _l('invoice'); ?></span>
-                        </div>
-                        <div class="col-md-6 mtop10">
-                            <div class="onoffswitch">
-                                <input type="checkbox" id="invoice_emails" data-perm-id="1" class="onoffswitch-checkbox" <?php if(isset($contact) && $contact->invoice_emails == '1'){echo 'checked';} ?>  value="invoice_emails" name="invoice_emails">
-                                <label class="onoffswitch-label" for="invoice_emails"></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 row">
-                    <div class="row">
-                        <div class="col-md-6 mtop10 border-right">
-                            <span><?php echo _l('estimate'); ?></span>
-                        </div>
-                        <div class="col-md-6 mtop10">
-                            <div class="onoffswitch">
-                                <input type="checkbox" id="estimate_emails" data-perm-id="2" class="onoffswitch-checkbox" <?php if(isset($contact) && $contact->estimate_emails == '1'){echo 'checked';} ?>  value="estimate_emails" name="estimate_emails">
-                                <label class="onoffswitch-label" for="estimate_emails"></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 row">
-                    <div class="row">
-                        <div class="col-md-6 mtop10 border-right">
-                            <span><?php echo _l('credit_note'); ?></span>
-                        </div>
-                        <div class="col-md-6 mtop10">
-                            <div class="onoffswitch">
-                                <input type="checkbox" id="credit_note_emails" data-perm-id="1" class="onoffswitch-checkbox" <?php if(isset($contact) && $contact->credit_note_emails == '1'){echo 'checked';} ?>  value="credit_note_emails" name="credit_note_emails">
-                                <label class="onoffswitch-label" for="credit_note_emails"></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 row">
-                    <div class="row">
-                        <div class="col-md-6 mtop10 border-right">
-                            <span><?php echo _l('project'); ?></span>
-                        </div>
-                        <div class="col-md-6 mtop10">
-                            <div class="onoffswitch">
-                                <input type="checkbox" id="project_emails" data-perm-id="6" class="onoffswitch-checkbox" <?php if(isset($contact) && $contact->project_emails == '1'){echo 'checked';} ?>  value="project_emails" name="project_emails">
-                                <label class="onoffswitch-label" for="project_emails"></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 row">
-                    <div class="row">
-                        <div class="col-md-6 mtop10 border-right">
-                            <span><?php echo _l('tickets'); ?></span>
-                        </div>
-                        <div class="col-md-6 mtop10">
-                            <div class="onoffswitch">
-                                <input type="checkbox" id="ticket_emails" data-perm-id="5" class="onoffswitch-checkbox" <?php if(isset($contact) && $contact->ticket_emails == '1'){echo 'checked';} ?>  value="ticket_emails" name="ticket_emails">
-                                <label class="onoffswitch-label" for="ticket_emails"></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mtop10 border-right">
-                            <span><i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('only_project_tasks'); ?>"></i> <?php echo _l('task'); ?></span>
-                        </div>
-                        <div class="col-md-6 mtop10">
-                            <div class="onoffswitch">
-                                <input type="checkbox" id="task_emails" data-perm-id="6" class="onoffswitch-checkbox" <?php if(isset($contact) && $contact->task_emails == '1'){echo 'checked';} ?>  value="task_emails" name="task_emails">
-                                <label class="onoffswitch-label" for="task_emails"></label>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                 <div class="col-md-6 row">
-                    <div class="row">
-                        <div class="col-md-6 mtop10 border-right">
-                            <span><?php echo _l('contract'); ?></span>
-                        </div>
-                        <div class="col-md-6 mtop10">
-                            <div class="onoffswitch">
-                                <input type="checkbox" id="contract_emails" data-perm-id="3" class="onoffswitch-checkbox" <?php if(isset($contact) && $contact->contract_emails == '1'){echo 'checked';} ?>  value="contract_emails" name="contract_emails">
-                                <label class="onoffswitch-label" for="contract_emails"></label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <?php hooks()->do_action('after_contact_modal_content_loaded'); ?>
-    </div>
+
+
+
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo _l('close'); ?></button>
         <button type="submit" class="btn btn-info" data-loading-text="<?php echo _l('wait_text'); ?>" autocomplete="off" data-form="#contact-form"><?php echo _l('submit'); ?></button>

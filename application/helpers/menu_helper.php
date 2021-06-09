@@ -145,7 +145,7 @@ function app_init_admin_sidebar_menu_items()
     $CI->app_menu->add_sidebar_menu_item('tasks', [
         'name'     => _l('als_tasks'),
         'href'     => admin_url('tasks'),
-        'icon'     => 'fa fa-tasks',
+        'icon'     => 'fa fa-bell',
         'position' => 35,
         'badge'    => [],
     ]);
@@ -156,7 +156,7 @@ function app_init_admin_sidebar_menu_items()
             'collapse' => $enable_badge,
             'name'     => _l('support'),
             'href'     => admin_url('tickets'),
-            'icon'     => 'fa fa-ticket',
+            'icon'     => 'fa fa-file-text',
             'position' => 40,
             'badge'    => []
         ]);
