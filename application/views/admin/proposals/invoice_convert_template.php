@@ -1,12 +1,9 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="modal fade proposal-convert-modal" id="convert_to_invoice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-xxl" role="document">
         <?php echo form_open('admin/proposals/convert_to_invoice/'.$proposal->id,array('id'=>'proposal_convert_to_invoice_form','class'=>'_transaction_form invoice-form')); ?>
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" onclick="close_modal_manually('#convert_to_invoice')" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="close dismiss-proposal-convert-modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">
                     <span class="edit-title"><?php echo _l('proposal_convert_to_invoice'); ?></span>
                 </h4>
@@ -53,8 +50,4 @@
     $('input[name="adjustment"]').val('<?php echo $proposal->adjustment; ?>');
     $('input[name="show_quantity_as"][value="<?php echo $proposal->show_quantity_as; ?>"]').prop('checked',true).change();
     $('#convert_to_invoice #clientid').change();
-    // Trigger item select width fix
-    $('#convert_to_invoice').on('shown.bs.modal', function(){
-        $('#item_select').trigger('change')
-    })
 </script>

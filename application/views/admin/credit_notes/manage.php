@@ -1,4 +1,3 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
 <div id="wrapper">
    <div class="content">
@@ -88,7 +87,7 @@
      $.each($('._hidden_inputs._filters input'),function(){
        Credit_Notes_ServerParams[$(this).attr('name')] = '[name="'+$(this).attr('name')+'"]';
      });
-     initDataTable('.table-credit-notes', admin_url+'credit_notes/table', ['undefined'], ['undefined'], Credit_Notes_ServerParams, [[1,'desc'], [0,'desc']]);
+     initDataTable('.table-credit-notes', admin_url+'credit_notes/table', ['undefined'], ['undefined'], Credit_Notes_ServerParams, [0, 'desc']);
      init_credit_note();
   });
 </script>

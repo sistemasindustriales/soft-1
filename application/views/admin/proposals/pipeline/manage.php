@@ -1,4 +1,3 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
 <div id="wrapper">
     <div class="content">
@@ -64,8 +63,9 @@
 <?php $this->load->view('admin/includes/modals/sales_attach_file'); ?>
 <?php init_tail(); ?>
 <div id="convert_helper"></div>
+<?php echo app_script('assets/js','proposals.js'); ?>
 <script>
-   $(function(){
+    $(function(){
       proposals_pipeline();
   });
 </script>

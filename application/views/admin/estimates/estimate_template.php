@@ -1,4 +1,3 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="panel_s accounting-template estimate">
    <div class="panel-body">
       <?php if(isset($estimate)){ ?>
@@ -6,10 +5,6 @@
       <hr class="hr-panel-heading" />
       <?php } ?>
       <div class="row">
-          <?php if (isset($estimate_request_id) && $estimate_request_id != '') {
-              echo form_hidden('estimate_request_id',$estimate_request_id);
-          }
-          ?>
          <div class="col-md-6">
             <div class="f_client_id">
              <div class="form-group select-placeholder">
@@ -40,63 +35,37 @@
             </div>
            </div>
             <div class="row">
-               <div class="col-md-12">
-                  <a href="#" class="edit_shipping_billing_info" data-toggle="modal" data-target="#billing_and_shipping_details"><i class="fa fa-pencil-square-o"></i></a>
+
+
+
+
+
+               <div style="margin-top:10px;" class="col-md-3">
+                  <a  href="#" class="edit_shipping_billing_info" data-toggle="modal" data-target="#billing_and_shipping_details"><i class="fa fa-pencil-square-o"></i> Proveedor</a>
                   <?php include_once(APPPATH .'views/admin/estimates/billing_and_shipping_template.php'); ?>
-               </div>
-               <div class="col-md-6">
-                  <p class="bold"><?php echo _l('invoice_bill_to'); ?></p>
-                  <address>
-                     <span class="billing_street">
-                     <?php $billing_street = (isset($estimate) ? $estimate->billing_street : '--'); ?>
-                     <?php $billing_street = ($billing_street == '' ? '--' :$billing_street); ?>
-                     <?php echo $billing_street; ?></span><br>
-                     <span class="billing_city">
-                     <?php $billing_city = (isset($estimate) ? $estimate->billing_city : '--'); ?>
-                     <?php $billing_city = ($billing_city == '' ? '--' :$billing_city); ?>
-                     <?php echo $billing_city; ?></span>,
-                     <span class="billing_state">
-                     <?php $billing_state = (isset($estimate) ? $estimate->billing_state : '--'); ?>
-                     <?php $billing_state = ($billing_state == '' ? '--' :$billing_state); ?>
-                     <?php echo $billing_state; ?></span>
-                     <br/>
-                     <span class="billing_country">
-                     <?php $billing_country = (isset($estimate) ? get_country_short_name($estimate->billing_country) : '--'); ?>
-                     <?php $billing_country = ($billing_country == '' ? '--' :$billing_country); ?>
-                     <?php echo $billing_country; ?></span>,
-                     <span class="billing_zip">
-                     <?php $billing_zip = (isset($estimate) ? $estimate->billing_zip : '--'); ?>
-                     <?php $billing_zip = ($billing_zip == '' ? '--' :$billing_zip); ?>
-                     <?php echo $billing_zip; ?></span>
-                  </address>
-               </div>
-               <div class="col-md-6">
-                  <p class="bold"><?php echo _l('ship_to'); ?></p>
-                  <address>
-                     <span class="shipping_street">
-                     <?php $shipping_street = (isset($estimate) ? $estimate->shipping_street : '--'); ?>
-                     <?php $shipping_street = ($shipping_street == '' ? '--' :$shipping_street); ?>
-                     <?php echo $shipping_street; ?></span><br>
-                     <span class="shipping_city">
-                     <?php $shipping_city = (isset($estimate) ? $estimate->shipping_city : '--'); ?>
-                     <?php $shipping_city = ($shipping_city == '' ? '--' :$shipping_city); ?>
-                     <?php echo $shipping_city; ?></span>,
-                     <span class="shipping_state">
-                     <?php $shipping_state = (isset($estimate) ? $estimate->shipping_state : '--'); ?>
-                     <?php $shipping_state = ($shipping_state == '' ? '--' :$shipping_state); ?>
-                     <?php echo $shipping_state; ?></span>
-                     <br/>
-                     <span class="shipping_country">
-                     <?php $shipping_country = (isset($estimate) ? get_country_short_name($estimate->shipping_country) : '--'); ?>
-                     <?php $shipping_country = ($shipping_country == '' ? '--' :$shipping_country); ?>
-                     <?php echo $shipping_country; ?></span>,
-                     <span class="shipping_zip">
-                     <?php $shipping_zip = (isset($estimate) ? $estimate->shipping_zip : '--'); ?>
-                     <?php $shipping_zip = ($shipping_zip == '' ? '--' :$shipping_zip); ?>
-                     <?php echo $shipping_zip; ?></span>
-                  </address>
-               </div>
-            </div>
+             
+
+ <address>
+           <h5 class="billing_country">
+             <?php $billing_country = (isset($estimate) ? get_country_short_name($estimate->billing_country) : ''); ?>
+             <?php $billing_country = ($billing_country == '' ? '' :$billing_country); ?>
+             <?php echo $billing_country; ?></h5>
+             </address>
+          
+
+  </div>
+      
+<br>
+   
+           
+                 </div>
+
+
+<hr><br><br><br><br><br>
+
+
+
+
             <?php
                $next_estimate_number = get_option('next_estimate_number');
                $format = get_option('estimate_number_format');
@@ -173,6 +142,9 @@
                </div>
             </div>
 
+
+
+
             <div class="row">
                <div class="col-md-6">
                   <?php $value = (isset($estimate) ? _d($estimate->date) : _d(date('Y-m-d'))); ?>
@@ -209,12 +181,11 @@
                <div class="row">
                   <div class="col-md-6">
                      <?php
-
-                        $currency_attr = array('disabled'=>true,'data-show-subtext'=>true);
-                        $currency_attr = apply_filters_deprecated('estimate_currency_disabled', [$currency_attr], '2.3.0', 'estimate_currency_attributes');
+                        $s_attrs = array('disabled'=>true,'data-show-subtext'=>true);
+                        $s_attrs = do_action('estimate_currency_disabled',$s_attrs);
                         foreach($currencies as $currency){
                           if($currency['isdefault'] == 1){
-                            $currency_attr['data-base'] = $currency['id'];
+                            $s_attrs['data-base'] = $currency['id'];
                           }
                           if(isset($estimate)){
                             if($currency['id'] == $estimate->currency){
@@ -226,9 +197,8 @@
                           }
                         }
                         }
-                        $currency_attr = hooks()->apply_filters('estimate_currency_attributes',$currency_attr);
                         ?>
-                     <?php echo render_select('currency', $currencies, array('id','name','symbol'), 'estimate_add_edit_currency', $selected, $currency_attr); ?>
+                     <?php echo render_select('currency',$currencies,array('id','name','symbol'),'estimate_add_edit_currency',$selected,$s_attrs); ?>
                   </div>
                    <div class="col-md-6">
                      <div class="form-group select-placeholder">
@@ -240,10 +210,16 @@
                         </select>
                      </div>
                   </div>
-                  <div class="col-md-12">
-                    <?php $value = (isset($estimate) ? $estimate->reference_no : ''); ?>
-                    <?php echo render_input('reference_no','reference_no',$value); ?>
+
+
+            <div class="col-md-12">
+
+                    <?php echo render_input('reference_no','reference_no',$billing_country); ?>
                   </div>
+
+
+
+
                   <div class="col-md-6">
                          <?php
                         $selected = '';
@@ -278,42 +254,20 @@
    </div>
    <?php $this->load->view('admin/estimates/_add_edit_items'); ?>
    <div class="row">
-    <div class="col-md-12 mtop15">
-      <div class="panel-body bottom-transaction">
-        <?php $value = (isset($estimate) ? $estimate->clientnote : get_option('predefined_clientnote_estimate')); ?>
-        <?php echo render_textarea('clientnote','estimate_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
-        <?php $value = (isset($estimate) ? $estimate->terms : get_option('predefined_terms_estimate')); ?>
-        <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
-        <div class="btn-bottom-toolbar text-right">
-          <div class="btn-group dropup">
-            <button type="button" class="btn-tr btn btn-info estimate-form-submit transaction-submit">
+      <div class="col-md-12 mtop15">
+         <div class="panel-body bottom-transaction">
+            <?php $value = (isset($estimate) ? $estimate->clientnote : get_option('predefined_clientnote_estimate')); ?>
+            <?php echo render_textarea('clientnote','estimate_add_edit_client_note',$value,array(),array(),'mtop15'); ?>
+            <?php $value = (isset($estimate) ? $estimate->terms : get_option('predefined_terms_estimate')); ?>
+            <?php echo render_textarea('terms','terms_and_conditions',$value,array(),array(),'mtop15'); ?>
+            <div class="btn-bottom-toolbar text-right">
+            
+              <button type="button" class="btn-tr btn btn-info mleft10 estimate-form-submit transaction-submit">
               <?php echo _l('submit'); ?>
-            </button>
-          <button type="button"
-            class="btn btn-info dropdown-toggle"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-right width200">
-            <li>
-              <a href="#" class="estimate-form-submit save-and-send transaction-submit">
-                <?php echo _l('save_and_send'); ?>
-              </a>
-            </li>
-            <?php if(!isset($estimate)) { ?>
-              <li>
-                <a href="#" class="estimate-form-submit save-and-send-later transaction-submit">
-                  <?php echo _l('save_and_send_later'); ?>
-                </a>
-              </li>
-            <?php } ?>
-          </ul>
-        </div>
+              </button>
+            </div>
+         </div>
+           <div class="btn-bottom-pusher"></div>
       </div>
-    </div>
-    <div class="btn-bottom-pusher"></div>
-  </div>
-</div>
+   </div>
 </div>

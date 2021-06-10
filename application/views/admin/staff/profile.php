@@ -61,29 +61,9 @@
                           </select>
                       </div>
                       <?php } ?>
-                      <div class="form-group select-placeholder">
-                        <label for="direction"><?php echo _l('document_direction'); ?></label>
-                        <select class="selectpicker" data-none-selected-text="<?php echo _l('system_default_string'); ?>" data-width="100%" name="direction" id="direction">
-                          <option value="" <?php if(isset($member) && empty($member->direction)){echo 'selected';} ?>></option>
-                          <option value="ltr" <?php if(isset($member) && $member->direction == 'ltr'){echo 'selected';} ?>>LTR</option>
-                          <option value="rtl" <?php if(isset($member) && $member->direction == 'rtl'){echo 'selected';} ?>>RTL</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="facebook" class="control-label"><i class="fa fa-facebook"></i> <?php echo _l('staff_add_edit_facebook'); ?></label>
-                    <input type="text" class="form-control" name="facebook" value="<?php if(isset($member)){echo $member->facebook;} ?>">
-                </div>
-                <div class="form-group">
-                    <label for="linkedin" class="control-label"><i class="fa fa-linkedin"></i> <?php echo _l('staff_add_edit_linkedin'); ?></label>
-                    <input type="text" class="form-control" name="linkedin" value="<?php if(isset($member)){echo $member->linkedin;} ?>">
-                </div>
-                <div class="form-group">
-                    <label for="skype" class="control-label"><i class="fa fa-skype"></i> <?php echo _l('staff_add_edit_skype'); ?></label>
-                    <input type="text" class="form-control" name="skype" value="<?php if(isset($member)){echo $member->skype;} ?>">
-                </div>
-                <i class="fa fa-question-circle" data-toggle="tooltip" data-title="<?php echo _l('staff_email_signature_help'); ?>"></i>
-                <?php $value = (isset($member) ? $member->email_signature : ''); ?>
-                <?php echo render_textarea('email_signature','settings_email_signature',$value, ['data-entities-encode'=>'true']); ?>
+                     
+                 
+               
                 <?php if(count($staff_departments) > 0){ ?>
                 <div class="form-group">
                     <label for="departments"><?php echo _l('staff_edit_profile_your_departments'); ?></label>
@@ -138,35 +118,7 @@
       </span>
     </div>
     <?php } ?>
-    <div class="panel_s mtop10  ">
-        <div class="panel-body">
-           <h4 class="no-margin">
-            <?php echo _l('staff_two_factor_authentication'); ?>
-        </h4>
-        <hr class="hr-panel-heading" />
-        <?php echo form_open('admin/staff/update_two_factor',array('id'=>'two_factor_auth_form')); ?>
-        <div class="radio radio-primary">
-            <input type="radio" id="two_factor_auth_disabled" name="two_factor_auth" value="off" class="custom-control-input"<?php echo ($current_user->two_factor_auth_enabled == 0) ? 'checked' : '' ?>>
-            <label class="custom-control-label" for="two_factor_auth_disabled"><?php echo _l('two_factor_authentication_disabed'); ?></label>
-        </div>
-        <?php if(is_email_template_active('two-factor-authentication')){ ?>
-        <div class="radio radio-primary">
-            <input type="radio" id="two_factor_auth_enabled" name="two_factor_auth" value="email" class="custom-control-input"<?php echo ($current_user->two_factor_auth_enabled == 1) ? 'checked' : '' ?>>
-            <label for="two_factor_auth_enabled">
-                <i class="fa fa-question-circle" data-placement="right" data-toggle="tooltip" data-title="<?php echo _l('two_factor_authentication_info'); ?>"></i>
-                <?php echo _l('enable_two_factor_authentication'); ?>
-            </label>
-        </div>
-        <?php } ?>
-        <div class="radio radio-primary">
-            <input type="radio" id="google_two_factor_auth_enabled" name="two_factor_auth" value="google" class="custom-control-input"<?php echo ($current_user->two_factor_auth_enabled == 2) ? 'checked' : '' ?>>
-            <label class="custom-control-label" for="google_two_factor_auth_enabled"><?php echo _l('enable_google_two_factor_authentication'); ?></label>
-        </div>
-        <div id="qr_image" class=" mtop30 card">
-        </div>
-        <button id="submit_2fa" type="submit" class="btn btn-info pull-right"><?php echo _l('submit'); ?></button>
-        <?php echo form_close(); ?>
-    </div>
+   
 </div>
 </div>
 </div>

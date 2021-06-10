@@ -1,4 +1,3 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php echo form_hidden('_attachment_sale_id',$credit_note->id); ?>
 <?php echo form_hidden('_attachment_sale_type','credit_note'); ?>
 <div class="col-md-12 no-padding">
@@ -9,12 +8,16 @@
             <div class="scroller arrow-right"><i class="fa fa-angle-right"></i></div>
             <div class="horizontal-tabs">
                <ul class="nav nav-tabs nav-tabs-horizontal mbot15" role="tablist">
-                  <li role="presentation" class="active">
+                  
+
+
+<li role="presentation" class="active">
                      <a href="#tab_credit_note" aria-controls="tab_credit_note" role="tab" data-toggle="tab">
                      <?php echo _l('credit_note'); ?>
                      </a>
                   </li>
-                  <li role="presentation">
+                  
+<li role="presentation">
                      <a href="#invoices_credited" aria-controls="invoices_credited" role="tab" data-toggle="tab">
                      <?php echo _l('invoices_credited'); ?>
                      <?php if(count($credit_note->applied_credits) > 0) {
@@ -23,50 +26,35 @@
                         ?>
                      </a>
                   </li>
-                  <li role="presentation">
-                     <a href="#tab_refunds" aria-controls="tab_refunds" role="tab" data-toggle="tab">
-                     <?php echo _l('refunds'); ?>
-                     <?php if(count($credit_note->refunds) > 0) {
-                        echo '<span class="badge">'.count($credit_note->refunds).'</span>';
-                        }
-                        ?>
-                     </a>
-                  </li>
-                  <li role="presentation" class="tab-separator">
+                  
+<li role="presentation" class="tab-separator">
                      <a href="#tab_reminders" onclick="initDataTable('.table-reminders', admin_url + 'misc/get_reminders/' + <?php echo $credit_note->id ;?> + '/' + 'credit_note', undefined, undefined, undefined,[1,'asc']); return false;" aria-controls="tab_reminders" role="tab" data-toggle="tab">
                      <?php echo _l('reminders'); ?>
                      <?php
-                        $total_reminders = total_rows(db_prefix().'reminders',
-                          array(
+                        $total_reminders = total_rows('tblreminders',
+                         array(
                            'isnotified'=>0,
                            'staff'=>get_staff_user_id(),
                            'rel_type'=>'credit_note',
                            'rel_id'=>$credit_note->id
-                        )
+                         )
                         );
                         if($total_reminders > 0){
-                          echo '<span class="badge">'.$total_reminders.'</span>';
+                         echo '<span class="badge">'.$total_reminders.'</span>';
                         }
                         ?>
                      </a>
                   </li>
-                  <li role="presentation" data-toggle="tooltip" title="<?php echo _l('emails_tracking'); ?>" class="tab-separator">
-                     <a href="#tab_emails_tracking" aria-controls="tab_emails_tracking" role="tab" data-toggle="tab">
-                     <?php if(!is_mobile()){ ?>
-                     <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
-                     <?php } else { ?>
-                     <?php echo _l('emails_tracking'); ?>
-                     <?php } ?>
-                     </a>
-                  </li>
-                  <li role="presentation" class="tab-separator toggle_view">
+                 
+
+<li role="presentation" class="tab-separator toggle_view">
                      <a href="#" onclick="small_table_full_view(); return false;" data-placement="left" data-toggle="tooltip" data-title="<?php echo _l('toggle_full_view'); ?>">
                      <i class="fa fa-expand"></i></a>
                   </li>
                </ul>
             </div>
          </div>
-         <div class="row mtop10">
+         <div class="row">
             <div class="col-md-3">
                <?php echo format_credit_note_status($credit_note->status);  ?>
             </div>
@@ -94,31 +82,28 @@
                      </ul>
                   </div>
                   <?php if($credit_note->status != 3 && !empty($credit_note->clientid)) { ?>
-                  <a href="#" class="credit-note-send-to-client btn btn-default" data-toggle="modal" data-target="#credit_note_send_to_client_modal">
-                  <i class="fa fa-envelope"></i>
-                  </a>
-                  <?php } ?>
+                  
+
+
+
+              <?php } ?>
                   <?php if($credit_note->status == 1 && !empty($credit_note->clientid)){ ?>
                   <a href="#" data-toggle="modal" data-target="#apply_credits" class="btn btn-info">
                   <?php echo _l('apply_to_invoice'); ?>
                   </a>
                   <?php } ?>
+                  <?php if(($credit_note->status != 2 && $credit_note->status != 3 && !$credit_note->credits_used && has_permission('credit_notes','','edit'))
+                     || ($credit_note->status == 3 && has_permission('credit_notes','','edit'))
+                     || has_permission('credit_notes','','delete')
+                     ) { ?>
                   <div class="btn-group">
                      <button type="button" class="btn btn-default pull-left dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      <?php echo _l('more'); ?> <span class="caret"></span>
                      </button>
                      <ul class="dropdown-menu dropdown-menu-right">
-                        <?php hooks()->do_action('credit_note_menu_links_start', $credit_note); ?>
                         <?php
-                           if($credit_note->status == 1 && has_permission('credit_notes','','edit')) { ?>
-                        <li>
-                           <a href="#" onclick="refund_credit_note(); return false;" id="credit_note_refund">
-                           <?php echo _l('refund'); ?>
-                           </a>
-                        </li>
-                        <?php }
-                           // You can only mark as void, if it's not closed, not void, no credits applied, no refunds applied
-                           if($credit_note->status != 2 && $credit_note->status != 3 && !$credit_note->credits_used && !$credit_note->total_refunds && has_permission('credit_notes','','edit')) { ?>
+                           // is not closed and is not void
+                           if($credit_note->status != 2 && $credit_note->status != 3 && !$credit_note->credits_used && has_permission('credit_notes','','edit')) { ?>
                         <li>
                            <a href="<?php echo admin_url('credit_notes/mark_void/'.$credit_note->id); ?>">
                            <?php echo _l('credit_note_status_void'); ?>
@@ -132,41 +117,24 @@
                         </li>
                         <?php } ?>
                         <li>
-                           <a href="#" data-toggle="modal" data-target="#sales_attach_file">
-                           <?php echo _l('invoice_attach_file'); ?>
-                           </a>
+                           <a href="#" data-toggle="modal" data-target="#sales_attach_file"><?php echo _l('invoice_attach_file'); ?></a>
                         </li>
                         <?php
                            if(has_permission('credit_notes','','delete')){
-                            $delete_tooltip = '';
-                            $allow_delete = true;
-                            if($credit_note->status == 2) {
+                             $delete_tooltip = '';
+                             if($credit_note->status == 2) {
                               $delete_tooltip = _l('credits_applied_cant_delete_status_closed');
-                              $allow_delete = false;
-                           } else if($credit_note->credits_used) {
+                            } else if($credit_note->credits_used) {
                               $delete_tooltip = _l('credits_applied_cant_delete_credit_note');
-                              $allow_delete = false;
-                           } else if($credit_note->total_refunds) {
-                              $allow_delete = false;
-                              $delete_tooltip = _l('refunds_applied_cant_delete_credit_note');
-                           }
-                           ?>
+                            }
+                            ?>
                         <li>
-                           <a
-                              data-toggle="tooltip"
-                              data-title="<?php echo $delete_tooltip; ?>"
-                              href="<?php echo admin_url('credit_notes/delete/'.$credit_note->id); ?>"
-                              class="text-danger delete-text <?php if($allow_delete){ echo ' _delete'; } ?>"
-                              <?php
-                                 if(!$allow_delete){
-                                    echo ' style="cursor:not-allowed;" onclick="return false;" ';
-                                 }; ?>>
-                           <?php echo _l('delete'); ?>
-                           </a>
+                           <a data-toggle="tooltip" data-title="<?php echo $delete_tooltip; ?>" href="<?php echo admin_url('credit_notes/delete/'.$credit_note->id); ?>" class="text-danger delete-text <?php if(!$credit_note->credits_used && $credit_note->status != 2){ echo ' _delete'; }?>"<?php if($credit_note->credits_used || $credit_note->status == 2){ echo ' style="cursor:not-allowed;" onclick="return false;" ';}; ?>><?php echo _l('delete'); ?></a>
                         </li>
                         <?php } ?>
                      </ul>
                   </div>
+                  <?php } ?>
                </div>
             </div>
          </div>
@@ -231,10 +199,41 @@
                   <div class="row">
                      <div class="col-md-12">
                         <div class="table-responsive">
-                           <?php
-                              $items = get_items_table_data($credit_note, 'credit_note', 'html', true);
-                              echo $items->table();
-                              ?>
+                           <table class="table items credit-note-items-preview">
+                              <thead>
+                                 <tr>
+                                    <th align="center">#</th>
+                                    <th class="description" width="50%" align="left">
+                                       <?php echo _l('credit_note_table_item_heading'); ?>
+                                    </th>
+                                    <?php
+                                       $custom_fields = get_items_custom_fields_for_table_html($credit_note->id,'credit_note');
+                                       foreach($custom_fields as $cf){
+                                         echo '<th class="custom_field" align="left">' . $cf['name'] . '</th>';
+                                       }
+                                       $qty_heading = _l('credit_note_table_quantity_heading');
+                                       if($credit_note->show_quantity_as == 2){
+                                        $qty_heading = _l('credit_note_table_hours_heading');
+                                       } else if($credit_note->show_quantity_as == 3){
+                                        $qty_heading = _l('credit_note_table_quantity_heading') .'/'._l('credit_note_table_hours_heading');
+                                       }
+                                       ?>
+                                    <th align="right"><?php echo $qty_heading; ?></th>
+                                    <th align="right"><?php echo _l('credit_note_table_rate_heading'); ?></th>
+                                    <?php if(get_option('show_tax_per_item') == 1){ ?>
+                                    <th align="right"><?php echo _l('credit_note_table_tax_heading'); ?></th>
+                                    <?php } ?>
+                                    <th align="right"><?php echo _l('credit_note_table_amount_heading'); ?></th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <?php
+                                    $items_data = get_table_items_and_taxes($credit_note->items,'credit_note',true);
+                                    $taxes = $items_data['taxes'];
+                                    echo $items_data['html'];
+                                    ?>
+                              </tbody>
+                           </table>
                         </div>
                      </div>
                      <div class="col-md-5 col-md-offset-7">
@@ -244,7 +243,7 @@
                                  <td><span class="bold"><?php echo _l('credit_note_subtotal'); ?></span>
                                  </td>
                                  <td class="subtotal">
-                                    <?php echo app_format_money($credit_note->subtotal, $credit_note->currency_name); ?>
+                                    <?php echo format_money($credit_note->subtotal,$credit_note->symbol); ?>
                                  </td>
                               </tr>
                               <?php if(is_sale_discount_applied($credit_note)){ ?>
@@ -252,17 +251,17 @@
                                  <td>
                                     <span class="bold"><?php echo _l('credit_note_discount'); ?>
                                     <?php if(is_sale_discount($credit_note,'percent')){ ?>
-                                    (<?php echo app_format_number($credit_note->discount_percent,true); ?>%)
+                                    (<?php echo _format_number($credit_note->discount_percent,true); ?>%)
                                     <?php } ?></span>
                                  </td>
                                  <td class="discount">
-                                    <?php echo '-' . app_format_money($credit_note->discount_total, $credit_note->currency_name); ?>
+                                    <?php echo '-' . format_money($credit_note->discount_total,$credit_note->symbol); ?>
                                  </td>
                               </tr>
                               <?php } ?>
                               <?php
-                                 foreach($items->taxes() as $tax){
-                                   echo '<tr class="tax-area"><td class="bold">'.$tax['taxname'].' ('.app_format_number($tax['taxrate']).'%)</td><td>'.app_format_money($tax['total_tax'], $credit_note->currency_name).'</td></tr>';
+                                 foreach($taxes as $tax){
+                                     echo '<tr class="tax-area"><td class="bold">'.$tax['taxname'].' ('._format_number($tax['taxrate']).'%)</td><td>'.format_money($tax['total_tax'], $credit_note->symbol).'</td></tr>';
                                  }
                                  ?>
                               <?php if((int)$credit_note->adjustment != 0){ ?>
@@ -271,7 +270,7 @@
                                     <span class="bold"><?php echo _l('credit_note_adjustment'); ?></span>
                                  </td>
                                  <td class="adjustment">
-                                    <?php echo app_format_money($credit_note->adjustment, $credit_note->currency_name); ?>
+                                    <?php echo format_money($credit_note->adjustment,$credit_note->symbol); ?>
                                  </td>
                               </tr>
                               <?php } ?>
@@ -279,7 +278,7 @@
                                  <td><span class="bold"><?php echo _l('credit_note_total'); ?></span>
                                  </td>
                                  <td class="total">
-                                    <?php echo app_format_money($credit_note->total, $credit_note->currency_name); ?>
+                                    <?php echo format_money($credit_note->total,$credit_note->symbol); ?>
                                  </td>
                               </tr>
                               <?php if($credit_note->credits_used){ ?>
@@ -290,19 +289,7 @@
                                     </span>
                                  </td>
                                  <td>
-                                    <?php echo '-' . app_format_money($credit_note->credits_used, $credit_note->currency_name); ?>
-                                 </td>
-                              </tr>
-                              <?php } ?>
-                              <?php if($credit_note->total_refunds){ ?>
-                              <tr>
-                                 <td>
-                                    <span class="bold">
-                                    <?php echo _l('refund'); ?>
-                                    </span>
-                                 </td>
-                                 <td>
-                                    <?php echo '-' . app_format_money($credit_note->total_refunds, $credit_note->currency_name); ?>
+                                    <?php echo '-' . format_money($credit_note->credits_used,$credit_note->symbol); ?>
                                  </td>
                               </tr>
                               <?php } ?>
@@ -313,7 +300,7 @@
                                     </span>
                                  </td>
                                  <td>
-                                    <?php echo app_format_money($credit_note->remaining_credits, $credit_note->currency_name); ?>
+                                    <?php echo format_money($credit_note->remaining_credits,$credit_note->symbol); ?>
                                  </td>
                               </tr>
                            </tbody>
@@ -340,7 +327,7 @@
                   <?php foreach($credit_note->attachments as $attachment){
                      $attachment_url = site_url('download/file/sales_attachment/'.$attachment['attachment_key']);
                      if(!empty($attachment['external'])){
-                       $attachment_url = $attachment['external_link'];
+                      $attachment_url = $attachment['external_link'];
                      }
                      ?>
                   <div class="mbot15 row inline-block full-width" data-attachment-id="<?php echo $attachment['id']; ?>">
@@ -378,12 +365,10 @@
                      <?php foreach($credit_note->applied_credits as $credit) { ?>
                      <tr>
                         <td>
-                           <a href="<?php echo admin_url('invoices/list_invoices/'.$credit['invoice_id']); ?>">
-                              <?php echo format_invoice_number($credit['invoice_id']); ?>
-                           </a>
+                           <a href="<?php echo admin_url('invoices/list_invoices/'.$credit['invoice_id']); ?>"><?php echo format_invoice_number($credit['invoice_id']); ?></a>
                         </td>
                         <td>
-                           <?php echo app_format_money($credit['amount'], $credit_note->currency_name); ?>
+                           <?php echo format_money($credit['amount'],$credit_note->symbol); ?>
                         </td>
                         <td>
                            <?php echo _d($credit['date']); ?>
@@ -405,54 +390,6 @@
                   );
                   ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="tab_refunds">
-               <?php if(count($credit_note->refunds) == 0) {
-                  echo '<div class="alert alert-info no-mbot">';
-                  echo _l('not_refunds_found');
-                  echo '</div>';
-                  } else { ?>
-               <table class="table table-bordered no-mtop">
-                  <thead>
-                     <tr>
-                        <th><span class="bold"><?php echo _l('credit_date'); ?></span></th>
-                        <th><span class="bold"><?php echo _l('refund_amount'); ?></span></th>
-                        <th><span class="bold"><?php echo _l('payment_mode'); ?></span></th>
-                        <th><span class="bold"><?php echo _l('note'); ?></span></th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <?php foreach($credit_note->refunds as $refund) { ?>
-                     <tr>
-                        <td>
-                           <?php echo _d($refund['refunded_on']); ?>
-                        </td>
-                        <td>
-                           <?php echo app_format_money($refund['amount'], $credit_note->currency_name); ?>
-                        </td>
-                        <td>
-                           <?php echo $refund['payment_mode_name']; ?>
-                        </td>
-                        <td>
-                           <?php if(has_permission('credit_notes','','delete')) { ?>
-                           <a href="<?php echo admin_url('credit_notes/delete_refund/'.$refund['id'].'/'.$refund['credit_note_id']); ?>"
-                              class="pull-right text-danger _delete">
-                           <i class="fa fa-trash"></i>
-                           </a>
-                           <?php } ?>
-                           <?php if(has_permission('credit_notes','','edit')) { ?>
-                           <a href="#" onclick="edit_refund(<?php echo $refund['id']; ?>); return false;"
-                              class="pull-right mright5">
-                           <i class="fa fa-pencil-square-o"></i>
-                           </a>
-                           <?php } ?>
-                           <?php echo $refund['note']; ?>
-                        </td>
-                     </tr>
-                     <?php } ?>
-                  </tbody>
-               </table>
-               <?php }  ?>
-            </div>
             <div role="tabpanel" class="tab-pane" id="tab_reminders">
                <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target=".reminder-modal-credit_note-<?php echo $credit_note->id; ?>"><i class="fa fa-bell-o"></i> <?php echo _l('credit_note_set_reminder_title'); ?></a>
                <hr />
@@ -473,15 +410,4 @@
    init_selectpicker();
    init_form_reminder();
    init_tabs_scrollable();
-
-   function refund_credit_note() {
-      var credit_note_id = <?php echo $credit_note->id; ?>;
-      $('#credit_note').load(admin_url + 'credit_notes/refund/' + credit_note_id);
-   }
-
-   function edit_refund(refund_id) {
-      var credit_note_id = <?php echo $credit_note->id; ?>;
-      $('#credit_note').load(admin_url + 'credit_notes/refund/' + credit_note_id + '/' + refund_id);
-   }
-
 </script>

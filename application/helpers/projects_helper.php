@@ -100,13 +100,7 @@ function app_init_project_tabs()
         'visible'  => (get_option('access_tickets_to_none_staff_members') == 1 && !is_staff_member()) || is_staff_member(),
     ]);
 
-    $CI->app_tabs->add_project_tab('project_contracts', [
-        'name'     => _l('contracts'),
-        'icon'     => 'fa fa-file',
-        'view'     => 'admin/projects/project_contracts',
-        'position' => 45,
-        'visible'  => has_permission('contracts', '', 'view') || has_permission('contracts', '', 'view_own'),
-    ]);
+
 
     $CI->app_tabs->add_project_tab('sales', [
         'name'     => _l('sales_string'),
@@ -150,13 +144,21 @@ function app_init_project_tabs()
         'visible'  => has_permission('credit_notes', '', 'view') || has_permission('credit_notes', '', 'view_own'),
     ]);
 
-    $CI->app_tabs->add_project_tab_children_item('sales', [
-        'slug'     => 'project_subscriptions',
-        'name'     => _l('subscriptions'),
-        'view'     => 'admin/projects/project_subscriptions',
-        'position' => 25,
-        'visible'  => has_permission('subscriptions', '', 'view') || has_permission('subscriptions', '', 'view_own'),
-    ]);
+    $CI->app_tabs->add_project_tab('project_contracts', [
+        'name'     => Compras,
+        'icon'     => 'fa fa-truck',
+        'view'     => 'admin/projects/project_contracts',
+        'position' => 45,
+        'visible'  => has_permission('contracts', '', 'view') || has_permission('contracts', '', 'view_own'),
+    ]);    
+
+
+
+
+
+
+
+
 
     $CI->app_tabs->add_project_tab('project_notes', [
         'name'     => _l('project_notes'),

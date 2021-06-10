@@ -266,7 +266,7 @@
                   <!-- /.modal -->
                   <div class="checkbox">
                      <input type="checkbox" checked id="exclude_inactive" name="exclude_inactive">
-                     <label for="exclude_inactive"><?php echo _l('exclude_inactive'); ?> <?php echo _l('clients'); ?></label>
+                     <label for="exclude_inactive">Ocultar clientes inactivos</label>
                   </div>
                   <div class="clearfix mtop20"></div>
                   <?php

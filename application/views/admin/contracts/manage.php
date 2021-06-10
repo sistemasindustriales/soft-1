@@ -20,14 +20,8 @@
                             <h3 class="bold"><?php echo $count_active; ?></h3>
                             <span class="text-info"><?php echo _l('contract_summary_active'); ?></span>
                         </div>
-                        <div class="col-md-2 col-xs-6 border-right">
-                            <h3 class="bold"><?php echo $count_expired; ?></h3>
-                            <span class="text-danger"><?php echo _l('contract_summary_expired'); ?></span>
-                        </div>
-                        <div class="col-md-2 col-xs-6 border-right">
-                            <h3 class="bold"><?php echo count($expiring); ?></h3>
-                                <span class="text-warning"><?php echo _l('contract_summary_about_to_expire'); ?></span>
-                            </div>
+                     
+                      
                             <div class="col-md-2 col-xs-6 border-right">
                                 <h3 class="bold"><?php echo $count_recently_created; ?></h3>
                                     <span class="text-success"><?php echo _l('contract_summary_recently_added'); ?></span>

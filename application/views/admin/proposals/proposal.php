@@ -1,13 +1,12 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
 <div id="wrapper">
    <div class="content accounting-template proposal">
       <div class="row">
          <?php
-         if(isset($proposal)){
+            if(isset($proposal)){
              echo form_hidden('isedit',$proposal->id);
             }
-         $rel_type = '';
+            $rel_type = '';
             $rel_id = '';
             if(isset($proposal) || ($this->input->get('rel_id') && $this->input->get('rel_type'))){
              if($this->input->get('rel_id')){
@@ -19,15 +18,8 @@
              }
             }
             ?>
-         <?php
-         echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form'));
-
-         if($this->input->get('estimate_request_id')) {
-             echo form_hidden('estimate_request_id', $this->input->get('estimate_request_id'));
-         }
-         ?>
-
-          <div class="col-md-12">
+         <?php echo form_open($this->uri->uri_string(),array('id'=>'proposal-form','class'=>'_transaction_form proposal-form')); ?>
+         <div class="col-md-12">
             <div class="panel_s">
                <div class="panel-body">
                   <div class="row">
@@ -67,72 +59,9 @@
                               <?php $value = (isset($proposal) ? _d($proposal->date) : _d(date('Y-m-d'))) ?>
                               <?php echo render_date_input('date','proposal_date',$value); ?>
                           </div>
-                          <div class="col-md-6">
-                            <?php
-                        $value = '';
-                        if(isset($proposal)){
-                          $value = _d($proposal->open_till);
-                        } else {
-                          if(get_option('proposal_due_after') != 0){
-                              $value = _d(date('Y-m-d',strtotime('+'.get_option('proposal_due_after').' DAY',strtotime(date('Y-m-d')))));
-                          }
-                        }
-                        echo render_date_input('open_till','proposal_open_till',$value); ?>
-                          </div>
+                         
                         </div>
-                        <?php
-                           $selected = '';
-                           $currency_attr = array('data-show-subtext'=>true);
-                           foreach($currencies as $currency){
-                            if($currency['isdefault'] == 1){
-                              $currency_attr['data-base'] = $currency['id'];
-                            }
-                            if(isset($proposal)){
-                              if($currency['id'] == $proposal->currency){
-                                $selected = $currency['id'];
-                              }
-                              if($proposal->rel_type == 'customer'){
-                                $currency_attr['disabled'] = true;
-                              }
-                            } else {
-                              if($rel_type == 'customer'){
-                                $customer_currency = $this->clients_model->get_customer_default_currency($rel_id);
-                                if($customer_currency != 0){
-                                  $selected = $customer_currency;
-                                } else {
-                                  if($currency['isdefault'] == 1){
-                                    $selected = $currency['id'];
-                                  }
-                                }
-                                $currency_attr['disabled'] = true;
-                              } else {
-                               if($currency['isdefault'] == 1){
-                                $selected = $currency['id'];
-                              }
-                            }
-                           }
-                           }
-                           $currency_attr = apply_filters_deprecated('proposal_currency_disabled', [$currency_attr], '2.3.0', 'proposal_currency_attributes');
-                           $currency_attr = hooks()->apply_filters('proposal_currency_attributes', $currency_attr);
-                           ?>
-                           <div class="row">
-                             <div class="col-md-6">
-                              <?php
-                              echo render_select('currency', $currencies, array('id','name','symbol'), 'proposal_currency', $selected, $currency_attr);
-                              ?>
-                             </div>
-                             <div class="col-md-6">
-                               <div class="form-group select-placeholder">
-                                 <label for="discount_type" class="control-label"><?php echo _l('discount_type'); ?></label>
-                                 <select name="discount_type" class="selectpicker" data-width="100%" data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
-                                  <option value="" selected><?php echo _l('no_discount'); ?></option>
-                                  <option value="before_tax" <?php
-                                  if(isset($estimate)){ if($estimate->discount_type == 'before_tax'){ echo 'selected'; }}?>><?php echo _l('discount_type_before_tax'); ?></option>
-                                  <option value="after_tax" <?php if(isset($estimate)){if($estimate->discount_type == 'after_tax'){echo 'selected';}} ?>><?php echo _l('discount_type_after_tax'); ?></option>
-                                </select>
-                              </div>
-                            </div>
-                           </div>
+                      
                         <?php $fc_rel_id = (isset($proposal) ? $proposal->id : false); ?>
                         <?php echo render_custom_fields('proposal',$fc_rel_id); ?>
                          <div class="form-group no-mbot">
@@ -142,7 +71,7 @@
                         <div class="form-group mtop10 no-mbot">
                             <p><?php echo _l('proposal_allow_comments'); ?></p>
                             <div class="onoffswitch">
-                              <input type="checkbox" id="allow_comments" class="onoffswitch-checkbox" <?php if((isset($proposal) && $proposal->allow_comments == 1) || !isset($proposal)){echo 'checked';}; ?> value="on" name="allow_comments">
+                              <input type="checkbox" id="allow_comments" class="onoffswitch-checkbox" <?php if(isset($proposal)){if($proposal->allow_comments == 1){echo 'checked';}}; ?> value="on" name="allow_comments">
                               <label class="onoffswitch-label" for="allow_comments" data-toggle="tooltip" title="<?php echo _l('proposal_allow_comments_help'); ?>"></label>
                             </div>
                           </div>
@@ -162,7 +91,7 @@
                                     ?>
                                  <select name="status" class="selectpicker" data-width="100%" <?php echo $disabled; ?> data-none-selected-text="<?php echo _l('dropdown_non_selected_tex'); ?>">
                                     <?php foreach($statuses as $status){ ?>
-                                    <option value="<?php echo $status; ?>" <?php if((isset($proposal) && $proposal->status == $status) || (!isset($proposal) && $status == 0)){echo 'selected';} ?>><?php echo format_proposal_status($status,'',false); ?></option>
+                                    <option value="<?php echo $status; ?>" <?php if((isset($proposal) && $proposal->status == $status) || (!isset($proposal) && $status == 3)){echo 'selected';} ?>><?php echo format_proposal_status($status,'',false); ?></option>
                                     <?php } ?>
                                  </select>
                               </div>
@@ -247,7 +176,7 @@
    data = {};
 
    $(function(){
-    init_currency();
+    init_currency_symbol();
     // Maybe items ajax search
     init_ajax_search('items','#item_select.ajax-search',undefined,admin_url+'items/search');
     validate_proposal_form();
@@ -317,10 +246,14 @@
       var serverData = {};
       serverData.rel_id = _rel_id.val();
       data.type = _rel_type.val();
+      <?php if(isset($proposal)){ ?>
+        serverData.connection_type = 'proposal';
+        serverData.connection_id = '<?php echo $proposal->id; ?>';
+      <?php } ?>
       init_ajax_search(_rel_type.val(),_rel_id,serverData);
    }
    function validate_proposal_form(){
-      appValidateForm($('#proposal-form'), {
+      _validate_form($('#proposal-form'), {
         subject : 'required',
         proposal_to : 'required',
         rel_type: 'required',

@@ -110,18 +110,8 @@
                      </div>
                      <?php $value = (isset($member) ? $member->phonenumber : ''); ?>
                      <?php echo render_input('phonenumber','staff_add_edit_phonenumber',$value); ?>
-                     <div class="form-group">
-                        <label for="facebook" class="control-label"><i class="fa fa-facebook"></i> <?php echo _l('staff_add_edit_facebook'); ?></label>
-                        <input type="text" class="form-control" name="facebook" value="<?php if(isset($member)){echo $member->facebook;} ?>">
-                     </div>
-                     <div class="form-group">
-                        <label for="linkedin" class="control-label"><i class="fa fa-linkedin"></i> <?php echo _l('staff_add_edit_linkedin'); ?></label>
-                        <input type="text" class="form-control" name="linkedin" value="<?php if(isset($member)){echo $member->linkedin;} ?>">
-                     </div>
-                     <div class="form-group">
-                        <label for="skype" class="control-label"><i class="fa fa-skype"></i> <?php echo _l('staff_add_edit_skype'); ?></label>
-                        <input type="text" class="form-control" name="skype" value="<?php if(isset($member)){echo $member->skype;} ?>">
-                     </div>
+                   
+                    
                      <?php if(!is_language_disabled()){ ?>
                      <div class="form-group select-placeholder">
                         <label for="default_language" class="control-label"><?php echo _l('localization_default_language'); ?></label>
@@ -140,17 +130,7 @@
                         </select>
                      </div>
                      <?php } ?>
-                     <i class="fa fa-question-circle pull-left" data-toggle="tooltip" data-title="<?php echo _l('staff_email_signature_help'); ?>"></i>
-                     <?php $value = (isset($member) ? $member->email_signature : ''); ?>
-                     <?php echo render_textarea('email_signature','settings_email_signature',$value, ['data-entities-encode'=>'true']); ?>
-                     <div class="form-group select-placeholder">
-                        <label for="direction"><?php echo _l('document_direction'); ?></label>
-                        <select class="selectpicker" data-none-selected-text="<?php echo _l('system_default_string'); ?>" data-width="100%" name="direction" id="direction">
-                           <option value="" <?php if(isset($member) && empty($member->direction)){echo 'selected';} ?>></option>
-                           <option value="ltr" <?php if(isset($member) && $member->direction == 'ltr'){echo 'selected';} ?>>LTR</option>
-                           <option value="rtl" <?php if(isset($member) && $member->direction == 'rtl'){echo 'selected';} ?>>RTL</option>
-                        </select>
-                     </div>
+                    
                      <div class="form-group">
                         <?php if(count($departments) > 0){ ?>
                         <label for="departments"><?php echo _l('staff_add_edit_departments'); ?></label>
@@ -177,7 +157,7 @@
 
                      <div class="row">
                         <div class="col-md-12">
-                           <hr class="hr-10" />
+                         
                            <?php if (is_admin()){ ?>
                            <div class="checkbox checkbox-primary">
                               <?php
@@ -191,10 +171,7 @@
                            </div>
                             <?php } ?>
                             <?php if(!isset($member) && is_email_template_active('new-staff-created')){ ?>
-                              <div class="checkbox checkbox-primary">
-                                 <input type="checkbox" name="send_welcome_email" id="send_welcome_email" checked>
-                                 <label for="send_welcome_email"><?php echo _l('staff_send_welcome_email'); ?></label>
-                              </div>
+                            
                            <?php } ?>
                         </div>
                      </div>

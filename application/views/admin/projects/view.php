@@ -12,7 +12,7 @@
                         <h3 class="hide project-name"><?php echo $project->name; ?></h3>
                         <div id="project_view_name" class="pull-left">
                            <select class="selectpicker" id="project_top" data-width="100%"<?php if(count($other_projects) > 6){ ?> data-live-search="true" <?php } ?>>
-                              <option value="<?php echo $project->id; ?>" selected data-content="<?php echo $project->name; ?> - <small><?php echo $project->client_data->company; ?></small>">
+                              <option value="<?php echo $project->id; ?>" selected data-content="<?php echo $project->name; ?> - <?php echo $project->client_data->company; ?>">
                                 <?php echo $project->client_data->company; ?> <?php echo $project->name; ?>
                               </option>
                               <?php foreach($other_projects as $op){ ?>
@@ -33,7 +33,7 @@
                            $invoice_func = 'pre_invoice_project';
                            ?>
                         <?php if(has_permission('invoices','','create')){ ?>
-                        <a href="#" onclick="<?php echo $invoice_func; ?>(<?php echo $project->id; ?>); return false;" class="invoice-project btn btn-info<?php if($project->client_data->active == 0){echo ' disabled';} ?>"><?php echo _l('invoice_project'); ?></a>
+                       
                         <?php } ?>
                         <?php
                            $project_pin_tooltip = _l('pin_project');
@@ -46,11 +46,7 @@
                            <?php echo _l('more'); ?> <span class="caret"></span>
                            </button>
                            <ul class="dropdown-menu dropdown-menu-right width200 project-actions">
-                              <li>
-                                 <a href="<?php echo admin_url('projects/pin_action/'.$project->id); ?>">
-                                 <?php echo $project_pin_tooltip; ?>
-                                 </a>
-                              </li>
+                             
                               <?php if(has_permission('projects','','edit')){ ?>
                               <li>
                                  <a href="<?php echo admin_url('projects/project/'.$project->id); ?>">

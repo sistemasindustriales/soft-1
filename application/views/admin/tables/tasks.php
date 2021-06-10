@@ -95,32 +95,13 @@ foreach ($rResult as $aRow) {
 
     $outputName .= '<div class="row-options">';
 
-    $class = 'text-success bold';
+    $class = 'text bold';
     $style = '';
 
-    $tooltip = '';
-    if ($aRow['billed'] == 1 || !$aRow['is_assigned'] || $aRow['status'] == Tasks_model::STATUS_COMPLETE) {
-        $class = 'text-dark disabled';
-        $style = 'style="opacity:0.6;cursor: not-allowed;"';
-        if ($aRow['status'] == Tasks_model::STATUS_COMPLETE) {
-            $tooltip = ' data-toggle="tooltip" data-title="' . format_task_status($aRow['status'], false, true) . '"';
-        } elseif ($aRow['billed'] == 1) {
-            $tooltip = ' data-toggle="tooltip" data-title="' . _l('task_billed_cant_start_timer') . '"';
-        } elseif (!$aRow['is_assigned']) {
-            $tooltip = ' data-toggle="tooltip" data-title="' . _l('task_start_timer_only_assignee') . '"';
-        }
-    }
-
-    if ($aRow['not_finished_timer_by_current_staff']) {
-        $outputName .= '<a href="#" class="text-danger tasks-table-stop-timer" onclick="timer_action(this,' . $aRow['id'] . ',' . $aRow['not_finished_timer_by_current_staff'] . '); return false;">' . _l('task_stop_timer') . '</a>';
-    } else {
-        $outputName .= '<span' . $tooltip . ' ' . $style . '>
-        <a href="#" class="' . $class . ' tasks-table-start-timer" onclick="timer_action(this,' . $aRow['id'] . '); return false;">' . _l('task_start_timer') . '</a>
-        </span>';
-    }
+  
 
     if ($hasPermissionEdit) {
-        $outputName .= '<span class="text-dark"> | </span><a href="#" onclick="edit_task(' . $aRow['id'] . '); return false">' . _l('edit') . '</a>';
+        $outputName .= '<span class="text-dark">  </span><a href="#" onclick="edit_task(' . $aRow['id'] . '); return false">' . _l('edit') . '</a>';
     }
 
     if ($hasPermissionDelete) {

@@ -1,12 +1,9 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="modal fade proposal-convert-modal" id="convert_to_estimate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-xxl" role="document">
         <?php echo form_open('admin/proposals/convert_to_estimate/'.$proposal->id,array('id'=>'proposal_convert_to_estimate_form','class'=>'_transaction_form disable-on-submit')); ?>
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" onclick="close_modal_manually('#convert_to_estimate')" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="close dismiss-proposal-convert-modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">
                     <span class="edit-title"><?php echo _l('proposal_convert_to_estimate'); ?></span>
                 </h4>
@@ -19,9 +16,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" onclick="close_modal_manually('#convert_to_estimate')">
-                    <?php echo _l('close'); ?>
-                </button>
+                <button type="button" class="btn btn-default dismiss-proposal-convert-modal"><?php echo _l('close'); ?></button>
                 <button type="submit" class="btn btn-info"><?php echo _l('submit'); ?></button>
             </div>
         </div>
@@ -51,9 +46,4 @@
     $('input[name="adjustment"]').val('<?php echo $proposal->adjustment; ?>');
     $('input[name="show_quantity_as"][value="<?php echo $proposal->show_quantity_as; ?>"]').prop('checked',true).change();
     $('#convert_to_estimate #clientid').change();
-    // Trigger item select width fix
-    $('#convert_to_estimate').on('shown.bs.modal', function(){
-        $('#item_select').trigger('change')
-    })
-
 </script>

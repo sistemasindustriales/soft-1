@@ -1,4 +1,3 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="modal fade" id="sales_item_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -26,10 +25,10 @@
                         </div>
                         <?php
                             foreach($currencies as $currency){
-                                if($currency['isdefault'] == 0 && total_rows(db_prefix().'clients',array('default_currency'=>$currency['id'])) > 0){ ?>
+                                if($currency['isdefault'] == 0 && total_rows('tblclients',array('default_currency'=>$currency['id'])) > 0){ ?>
                                 <div class="form-group">
                                     <label for="rate_currency_<?php echo $currency['id']; ?>" class="control-label">
-                                        <?php echo _l('invoice_item_add_edit_rate_currency', $currency['name']); ?></label>
+                                        <?php echo _l('invoice_item_add_edit_rate_currency',$currency['name']); ?></label>
                                         <input type="number" id="rate_currency_<?php echo $currency['id']; ?>" name="rate_currency_<?php echo $currency['id']; ?>" class="form-control" value="">
                                     </div>
                              <?php   }
@@ -207,7 +206,7 @@ function init_item_js() {
 }
 function validate_item_form(){
     // Set validation for invoice item form
-    appValidateForm($('#invoice_item_form'), {
+    _validate_form($('#invoice_item_form'), {
         description: 'required',
         rate: {
             required: true,

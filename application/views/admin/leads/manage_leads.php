@@ -11,9 +11,7 @@
                      <?php echo _l('new_lead'); ?>
                      </a>
                      <?php if(is_admin() || get_option('allow_non_admin_members_to_import_leads') == '1'){ ?>
-                     <a href="<?php echo admin_url('leads/import'); ?>" class="btn btn-info pull-left display-block hidden-xs">
-                     <?php echo _l('import_leads'); ?>
-                     </a>
+                    
                      <?php } ?>
                      <div class="row">
                         <div class="col-md-5">

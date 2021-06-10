@@ -57,8 +57,11 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		<h1>Error</h1>
+
+<p>La acción que ha solicitado no está permitida.</p>
+
+
 	</div>
 </body>
 </html>

@@ -1,4 +1,3 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <?php init_head(); ?>
 <div id="wrapper">
 	<div class="content">
@@ -12,7 +11,7 @@
 <?php init_tail(); ?>
 <script>
 	$(function(){
-		initDataTable('.table-payments', admin_url+'payments/table', undefined, undefined,'undefined',<?php echo hooks()->apply_filters('payments_table_default_order', json_encode(array(0,'desc'))); ?>);
+		initDataTable('.table-payments', admin_url+'payments/table', undefined, undefined,'undefined',<?php echo do_action('payments_table_default_order',json_encode(array(0,'desc'))); ?>);
 	});
 </script>
 </body>

@@ -1,5 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-<div class="_filters _hidden_inputs">
+  <div class="_filters _hidden_inputs">
     <?php
     foreach($invoices_sale_agents as $agent){
         echo form_hidden('sale_agent_'.$agent['sale_agent']);
@@ -19,7 +18,6 @@
     }
     echo form_hidden('not_sent',$this->input->get('filter'));
     echo form_hidden('not_have_payment');
-    echo form_hidden('recurring');
     echo form_hidden('project_id');
     ?>
 </div>

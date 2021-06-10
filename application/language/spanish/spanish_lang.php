@@ -2526,7 +2526,7 @@ $lang['proposals_sort_open_till']                         = 'Abierto hasta';
 $lang['proposals_sort_pipeline']                          = 'Ordenes';
 $lang['proposals_sort_datecreated']                       = 'Fecha de creación';
 $lang['proposals_sort_proposal_date']                     = 'Fecha de remito';
-$lang['is_not_staff_member']                              = 'No hay miembro del personal';
+$lang['is_not_staff_member']                              = 'Invitado';
 $lang['lead_created']                                     = 'Creado';
 $lang['access_tickets_to_none_staff_members']             = 'Permitir el acceso a los Informes para los no miembros del personal';
 $lang['project_expenses']                                 = 'Gastos';
@@ -3807,10 +3807,10 @@ $lang['leads_canban_lead_value']            = 'Lead Value: %s';
 $lang['lead_add_edit_lead_value']           = 'Lead Value';
 
 # Version 2.6.0
-$lang['gantt_view_day'] = 'Days View';
-$lang['gantt_view_week'] = 'Weeks View';
-$lang['gantt_view_month'] = 'Months View';
-$lang['gantt_view_year'] = 'Years View';
+$lang['gantt_view_day'] = 'Ver días';
+$lang['gantt_view_week'] = 'Ver semanas';
+$lang['gantt_view_month'] = 'Ver meses';
+$lang['gantt_view_year'] = 'Ver años';
 
 # Version 2.7.0
 $lang['hour_of_day_perform_tasks_reminder_notification_help'] = '24 hours format eq. 9 for 9am or 15 for 3pm. It is used for recurring Task, Task reminders etc.';

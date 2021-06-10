@@ -91,7 +91,7 @@ ob_end_clean();?>
    </li>
    <?php if(is_staff_member()){ ?>
       <li class="icon header-newsfeed">
-         <a href="#" class="open_newsfeed desktop" data-toggle="tooltip" title="<?php echo _l('whats_on_your_mind'); ?>" data-placement="bottom"><i class="fa fa-share fa-fw fa-lg" aria-hidden="true"></i></a>
+         <a href="#" class="open_newsfeed desktop" data-toggle="tooltip" title="<?php echo _l('whats_on_your_mind'); ?>" data-placement="bottom"><i class="fa fa-warning fa-fw fa-lg" aria-hidden="true"></i></a>
       </li>
    <?php } ?>
    <li class="icon header-todo">
@@ -99,17 +99,7 @@ ob_end_clean();?>
          <span class="label bg-warning icon-total-indicator nav-total-todos<?php if($current_user->total_unfinished_todos == 0){echo ' hide';} ?>"><?php echo $current_user->total_unfinished_todos; ?></span>
       </a>
    </li>
-   <li class="icon header-timers timer-button" data-placement="bottom" data-toggle="tooltip" data-title="<?php echo _l('my_timesheets'); ?>">
-      <a href="#" id="top-timers" class="dropdown-toggle top-timers" data-toggle="dropdown">
-         <i class="fa fa-clock-o fa-fw fa-lg" aria-hidden="true"></i>
-         <span class="label bg-success icon-total-indicator icon-started-timers<?php if ($totalTimers = count($startedTimers) == 0){ echo ' hide'; }?>">
-            <?php echo count($startedTimers); ?>
-         </span>
-      </a>
-      <ul class="dropdown-menu animated fadeIn started-timers-top width350" id="started-timers-top">
-         <?php $this->load->view('admin/tasks/started_timers',array('startedTimers'=>$startedTimers)); ?>
-      </ul>
-   </li>
+  
    <li class="dropdown notifications-wrapper header-notifications" data-toggle="tooltip" title="<?php echo _l('nav_notifications'); ?>" data-placement="bottom">
       <?php $this->load->view('admin/includes/notifications'); ?>
    </li>
