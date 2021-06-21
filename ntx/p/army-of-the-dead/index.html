@@ -130,11 +130,56 @@
 <div class="col-xl-8 col-md-7">
 
 
-<video class="viewtube-player-single" preload="none" playsinline controls data-poster="https://occ-0-2942-185.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdQemQNAs5onxw1KMGf2vCQEpcWEZlvgxpVGtIpCyD43he1gkCZtPLg5_RWRP0TEyDY84paZfATfxEdKZJs5-goGOWNVZa-lFBBTKPipacOHKy1FZ4bSZB6z_O6M.jpg?r=5a8">
-    <source src="https://hls1x.vidembed.net/load/hls/SnK39QW6A06KYe84_2QdnQ/1624317291/342340/9190fa8afa705506581cd0fa453aa8ea/ep.0.1621620245.m3u8" type="application/x-mpegURL" />
-<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default />
 
-</video>
+
+
+<style>
+.video-js-responsive-container.vjs-hd {
+    padding-top: 56.25%;
+}
+.video-js-responsive-container.vjs-sd {
+    padding-top: 75%;
+}
+.video-js-responsive-container {
+    width: 100%;
+    position: relative;
+}
+.video-js-responsive-container .video-js {
+    height: 100% !important; 
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+</style>
+<div class="video-js-responsive-container vjs-hd">
+ <video
+    id="my-video" 
+    class="video-js vjs-default-skin vjs-big-play-centered"
+    controls
+    preload="auto"
+  
+
+    poster="https://occ-0-2942-185.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdQemQNAs5onxw1KMGf2vCQEpcWEZlvgxpVGtIpCyD43he1gkCZtPLg5_RWRP0TEyDY84paZfATfxEdKZJs5-goGOWNVZa-lFBBTKPipacOHKy1FZ4bSZB6z_O6M.jpg?r=5a8"
+    data-setup="{}"
+  >
+    <source src="https://hls1x.vidembed.net/load/hls/SnK39QW6A06KYe84_2QdnQ/1624317291/342340/9190fa8afa705506581cd0fa453aa8ea/ep.0.1621620245.m3u8" type="application/x-mpegURL" />
+    
+
+
+<track kind="captions" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" label="English" default/></track>
+
+
+
+<p class="vjs-no-js"></p>
+  </video>
+</div>
+
+
+
+
 
 
 
