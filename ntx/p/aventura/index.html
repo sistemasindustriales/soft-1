@@ -1,0 +1,697 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Netflix LITE</title>
+<link rel="icon" href="../../assets/images/thumbnail.png">
+<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Fira+Sans+Condensed%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COpen+Sans%3A300%2C400%2C600%2C700%2C800'>
+<link rel="stylesheet" href='../../assets/css/default.css'>
+<link rel="stylesheet" href='../../assets/css/plugins.css'>
+<link rel="stylesheet" href='../../assets/css/style.css'>
+<link rel="stylesheet" href='../../assets/css/color.css'>
+<link id="template-color" rel="stylesheet" href='../../assets/css/dark.css'>
+</head>
+<body>
+
+<div id="preloader">
+<div class="spinner">
+<div class="uil-ripple-css">
+<div></div>
+<div></div>
+</div>
+</div>
+</div>
+<header class="site-header fixed-top">
+<div class="container-fluid">
+<div class="row justify-content-between">
+<div class="col-xl-2 col-lg-2 my-auto d-none d-lg-block">
+<div class="d-flex">
+<a href="#" class="sidebar-toggle">
+<i class="far fa-bars"></i>
+</a>
+<div class="logo my-auto">
+<a href="index.html" class="custom-logo-link">
+
+
+<svg class="custom-logo" width="88px" height="32px" viewBox="0 0 111 30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#e50914" d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h5.124l-5.937 14.28zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343V0zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.688.062 5.375.28 7.969.405v4.657zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97h6.406zm-18.906-5.97V26.25c-1.563 0-3.156 0-4.688.062V4.687h-4.844V0h14.406v4.687h-4.874zM30.75 15.593c-2.062 0-4.5 0-6.25.095v6.968c2.75-.188 5.5-.406 8.281-.5v4.5l-12.968 1.032V0H32.78v4.687H24.5V11c1.813 0 4.594-.094 6.25-.094v4.688zM4.78 12.968v16.375C3.094 29.531 1.593 29.75 0 30V0h4.469l6.093 17.032V0h4.688v28.062c-1.656.282-3.344.376-5.125.625L4.78 12.968z"></path>
+                    </svg>
+
+
+</a> </div>
+</div>
+</div>
+<div class="col-xl-7 col-lg-7 my-auto d-none d-xl-block">
+<form class="ajax-search-form" action="#">
+<input type="text" name="s" class="keyword" placeholder="Buscar">
+<button type="submit"><i class="fa fa-search"></i></button>
+<ul class="datafetch"></ul>
+</form>
+</div>
+
+<div class="col-xl-2 col-lg-2 my-auto">
+<div class="d-flex">
+
+
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="off-canvas-menu-bar">
+<div class="pl-30 pr-30">
+<div class="row">
+<div class="col-1 my-auto">
+<div style="margin-top:-5px;" class="mobile-nav-toggler"><span class="fas fa-bars"></span></div>
+</div>
+
+<div class="col-7 my-auto">
+<a href="index.html" class="custom-logo-link" rel="home" aria-current="page">
+
+<svg class="custom-logo" width="104px" height="38px" viewBox="0 0 111 30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#e50914" d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h5.124l-5.937 14.28zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343V0zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.688.062 5.375.28 7.969.405v4.657zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97h6.406zm-18.906-5.97V26.25c-1.563 0-3.156 0-4.688.062V4.687h-4.844V0h14.406v4.687h-4.874zM30.75 15.593c-2.062 0-4.5 0-6.25.095v6.968c2.75-.188 5.5-.406 8.281-.5v4.5l-12.968 1.032V0H32.78v4.687H24.5V11c1.813 0 4.594-.094 6.25-.094v4.688zM4.78 12.968v16.375C3.094 29.531 1.593 29.75 0 30V0h4.469l6.093 17.032V0h4.688v28.062c-1.656.282-3.344.376-5.125.625L4.78 12.968z"></path>
+                    </svg></a> </div>
+
+
+
+</div>
+</div>
+</div>
+<div class="off-canvas-menu">
+<div class="menu-backdrop"></div>
+<i class="close-btn fa fa-close"></i>
+<nav class="mobile-nav">
+
+<ul class="navigation">
+</ul>
+</nav>
+</div>
+<div class="container-fluid p-0">
+<div class="d-flex topspace-90">
+<div class="sidebar-menu open">
+<nav class="desktop-menu">
+<ul class="menu">
+<li class="menu-item current-menu-item"><a href="index.html"><span>Inicio</span></a></li>
+<li class="menu-item"><a href="p/index.html"><span>Películas</span></a></li>
+<li class="menu-item"><a href="s/index.html"><span>Series</span></a></li>
+
+
+<li class="menu-item"><a href="p/acción"><span>Acción</span></a></li>
+<li class="menu-item"><a href="p/animación"><span>Animación</span></a></li>
+<li class="menu-item"><a href="p/aventura"><span>Aventura</span></a></li>
+<li class="menu-item"><a href="p/ciencia-ficcion"><span>Ciencia Ficción</span></a></li>
+<li class="menu-item"><a href="p/comedia"><span>Comedia</span></a></li>
+<li class="menu-item"><a href="p/documental"><span>Documental</span></a></li>
+<li class="menu-item"><a href="p/drama"><span>Drama</span></a></li>
+<li class="menu-item"><a href="p/fantasia"><span>Fantasía</span></a></li>
+<li class="menu-item"><a href="p/romance"><span>Romance</span></a></li>
+<li class="menu-item"><a href="p/suspenso"><span>Suspenso</span></a></li>
+<li class="menu-item"><a href="p/terror"><span>Terror</span></a></li>
+<li class="menu-item"><a href="p/otros"><span>Otros</span></a></li>
+</ul>
+</nav>
+</div>
+<div class="main-container">
+<div class="banners mt-4 mb-5">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--. estrenos -->
+
+
+<div class="row mb-4">
+<div class="col-md-6 my-auto">
+<h4>2019</h4>
+</div>
+<div class="col-md-6 my-auto">
+
+</div>
+</div>
+
+
+
+
+<div class="row justify-content-center video-items" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1979376">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/F7qhsavEXQAoTuP12XTO1Q/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt0437086">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/77/cb/9e/77cb9e90-df4e-6c75-957a-b238b955df19/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt0448115">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video113/v4/f4/63/18/f463180d-4b4d-83a9-3fd9-833ec4365736/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1488606">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/6TWqXyOHrJBxqaB-cq5XTg/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1946502">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/82/97/b2/8297b248-6cb5-c087-f698-37f6dd68e228/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2274648">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/d0/de/e3/d0dee343-eab7-9964-0810-b911ea906bf2/1160851235607_169.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3152592">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video114/v4/b4/28/be/b428be58-abb7-8230-566b-f17a7b60a11d/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2283336">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/b3/46/20/b346208c-425e-cbe5-af39-9273e0a47f27/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2386490">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/8f/40/a5/8f40a52b-7ad0-5c20-de5f-a645e33dbdf8/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2527338">
+<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/skopkyRoOEzJ2K_t2piKeg/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2935510">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video113/v4/c3/05/ac/c305acc3-c386-691c-c209-0f214c6b6529/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3038708">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video113/v4/ea/a7/40/eaa74022-000c-31db-757e-3e3dba0ee3b7/pr_source.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+<!--. estrenos -->
+
+<!--. estrenos -->
+
+
+<div class="row mb-4">
+<div class="col-md-6 my-auto">
+<h4>2018</h4>
+</div>
+<div class="col-md-6 my-auto">
+
+</div>
+</div>
+
+
+
+
+<div class="row justify-content-center video-items" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+
+
+
+
+
+
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1270797">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/30/82/2b/30822bfb-42e5-7aba-9201-763ed15e2976/SPE_VENOM_WW_ARTWORK_EN_3840x2160_1P3TEH000000CN.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1318517">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video113/v4/7b/ac/16/7bac165d-4dac-fd33-7dcb-0ed1af32f692/pr_source.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1365519">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/CK1OIVUAdwyi1amXoU5WRg/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1477834">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video124/v4/0c/3c/ae/0c3caec5-fb18-2e6c-1f90-fcd5cbc7e8ea/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1677720">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video124/v4/09/9d/ba/099dba50-920e-f575-9c5b-e5a8f8f6526e/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2388771">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/qoFGYbagCWbJ1_eZKNIOag/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2798920">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video124/v4/99/86/85/99868500-5ed4-8d7b-cbed-a1ebef5021a5/PAR_ANNIHILATION_WW_ARTWORK_EN_3840x2160_1MDF70000000CN.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--. estrenos -->
+<!--. estrenos -->
+
+
+<div class="row mb-4">
+<div class="col-md-6 my-auto">
+<h4>2017</h4>
+</div>
+<div class="col-md-6 my-auto">
+
+</div>
+</div>
+
+
+
+
+<div class="row justify-content-center video-items" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt0451279">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video124/v4/d6/d8/b0/d6d8b01c-d7cf-fc16-729e-0af32f07c1aa/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt0974015">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/d0/14/db/d014dbc3-c17a-1c59-c478-26de77462f07/1305325242-US-AMP_SF.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1293847">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video114/v4/d8/52/3f/d8523ff4-9f60-399e-9c90-fcd5e5ff3e4b/1186534739-ES-AMP_SF.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1648190">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video124/v4/01/2a/67/012a6743-638a-e5ec-1fb0-86d2c93c17a2/SPE_DARK_TOWER_WW_ARTWORK_EN_3840x2160_1MBK3R000001OJ.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1753383">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/23/d1/ae/23d1ae9e-992a-6eda-e6d2-e6678b30630c/aDogsPurpose_3840x2160_CoverArt.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2250912">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video113/v4/26/a2/07/26a207b4-c6a8-5ceb-5d13-2328e5f908b8/1243195844-US-AMP_SF.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1790809">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video113/v4/0b/2f/d4/0b2fd423-de65-8046-9d0d-2d46f8c1ec93/DIS_POTC_DEADMANTELLNOTALES_WW_ARTWORK_EN-US_3840x2160_1NZ6FH000000CO.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1935194">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video123/v4/9a/98/55/9a9855f2-c667-a4ae-ff6a-2e6a1391657a/1268757417-WW-AMP_SF.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt1972591">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video124/v4/05/48/9d/05489d8b-9514-4367-eee6-2173110881e3/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2226597">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video113/v4/a3/4c/9e/a34c9e9e-5055-1ea0-9cd7-8b7467186f52/MountainBetweenUs_CoverArt_3840x2160.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2239822">
+<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/ab/cf/bb/abcfbb53-a550-6eaf-c306-f65a701825cb/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2771200">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video123/v4/56/f3/dd/56f3dd3b-3b16-0a18-bc39-8ca148f0daa3/DIS_BEAUTYANDTHEBEAST2017_WW_ARTWORK_EN_3840x2160_1NATFB000000CI.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3014284">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video123/v4/00/20/10/00201042-21dc-b03a-3172-c5f1286bf610/1280615181-US-AMP_SF.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2398241">
+<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/50/24/0f/50240f68-8456-3df9-ab1a-af35094d97c2/SPE_SMURF_LOSVIL_WW_ARTWORK_EN_3840x2160_1S1FRR000000CK.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2283362">
+<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/4d/b9/95/4db995d4-52d2-cdf1-760e-bcea6c56832b/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2334871">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/e9/56/ed/e956ed88-560b-c36d-8975-2823d191174a/Snatched_CoverArt_3840x2160.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2345759">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video113/v4/46/cf/01/46cf014e-b34a-c9b6-1ce2-c4355996694e/1238368178-US-AMP_SF.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2380307">
+<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/MvD0zO8XZM8WHfPBQniS5A/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2527336">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/5c/f3/53/5cf35388-7f0d-6bfa-0406-ff9966c947b2/DIS_STAR_WARS_THE_LAST_JEDI_3840X2160_WW_ARTWORK_EN_0x0_20G1QB000000DP.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt2932536">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/22/b1/c0/22b1c0d7-ae8e-d608-74a9-f30f7ca792bd/47MetersDown_en_US_3840x2160_Cover_Art_1258239441.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--. estrenos -->
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+
+<div id="backtotop" style="display: block;"><i class="fal fa-lg fa-arrow-up"></i></div>
+<script src='../../assets/js/plugins.js'></script>
+<script src='../../assets/js/main.js'></script>
+</body>
+</html>
