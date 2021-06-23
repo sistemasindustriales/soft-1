@@ -1,3 +1,12 @@
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3387520">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/eb/a7/ad/eba7ad98-be91-246a-5537-3c5cc5defee7/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
 
 
@@ -30,7 +39,25 @@
 
 2017
 
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3348730">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video115/v4/53/2c/7e/532c7ec7-00f1-fd44-73c1-84e692f53d4e/pr_source.jpg/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3622110">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/1FfcgFloX9w7j8WcmyZWVg/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
 
 

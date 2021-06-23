@@ -102,9 +102,9 @@ a.product_type_grouped:hover,
 .excerpt-readmore a,
 .viewtube-team-social,
 .viewtube-team-content {
-    background: #e90101;
-    background: -webkit-linear-gradient(to right, #e90101, #e90101);
-    background: linear-gradient(to right, #e90101, #e90101);
+    background: #5b1ce6;
+    background: -webkit-linear-gradient(to right, #5b1ce6, #5b1ce6);
+    background: linear-gradient(to right, #5b1ce6, #5b1ce6);
 }
 
 .error-404 .fa-upload,
@@ -155,7 +155,7 @@ p.no-comments a,
 .tags a,
 a.button,
 .the_excerpt .entry-title a:hover {
-    color: #e90101;
+    color: #5b1ce6;
 }
 
 
@@ -180,12 +180,12 @@ ul.banner-button li a,
 .tags a,
 .category-item:hover,
 .playerContainer {
-    border-color: #e90101;
+    border-color: #5b1ce6;
 }
 
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#e90101' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#5b1ce6' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 /*----------------------------------------
@@ -194,6 +194,6 @@ ul.banner-button li a,
 
 @media screen and (max-width: 768px) {
     .navbar .menu-item>.active {
-        background: #e90101;
+        background: #5b1ce6;
     }
 }

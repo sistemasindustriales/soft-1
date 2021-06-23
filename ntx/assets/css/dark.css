@@ -32,7 +32,7 @@ select,
 .pagination .nav-links .page-numbers,
 .post-navigation,
 .comments-area {
-    background: #181818;
+    background: #02021c;
 }
 
 body,
@@ -44,7 +44,7 @@ blockquote,
 .tagcloud a,
 .single-post .post-share ul li a,
 .main-container {
-    background: #111;
+    background: #030328;
 }
 
 th,

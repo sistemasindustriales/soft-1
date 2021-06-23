@@ -1,9 +1,46 @@
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3281548">
+<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/4f/91/b8/4f91b8f0-a164-a848-b44a-a5d7907d41d1/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3361792">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video113/v4/f6/d0/bc/f6d0bcad-5cd8-5b4a-361b-c57027769082/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3513548">
+<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video113/v4/9a/8a/3e/9a8a3e49-dc59-9dc9-fb79-9b020e2edeb3/pr_source.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
 
 
 2018
 
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3846674">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/crxNKR5xn2w-5nMMgg7fvQ/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
 
 
@@ -20,8 +57,71 @@
 
 
 2017
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3315342">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video114/v4/c8/99/0e/c8990e45-cc30-aeb3-c573-62c90b7ec9f4/1207483880-US-AMP_SF.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3402236">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/ed/c2/da/edc2da9e-e0a0-5a75-2183-1350e03a0e8f/MurderOnOrientExpress_CoverArt_3840x2160.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3450958">
+<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/84/96/52/8496529d-5838-804a-d874-4d867079ce62/WarForThePlanetOfTheApes_CoverArt_3840x2160.lsr/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3563262">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video124/v4/8d/e8/b9/8de8b9f3-ea36-2027-fa72-97ab62e2d075/pr_source.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3622110">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/1FfcgFloX9w7j8WcmyZWVg/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3829920">
+<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/ca/3b/42/ca3b4283-cd43-7080-560c-e0f6b9318732/SPE_ONLY_THE_BRAVE_2017_WW_ARTWORK_EN_3840x2160_1MDDTD000000DJ.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-8">
+<div class="video-item-card">
+<div class="video-thumb">
+<a href="../../p/tt3890160">
+<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video114/v4/6e/c1/b3/6ec1b34a-6dc3-5296-f6d9-ce85b96ddc0b/SPE_BABY_DRIVER_WW_ARTWORK_EN_3840x2160_1MFIOH000000EM.png/509x286.jpg" alt="">
+</a>
+</div>
+</div>
+</div>
 
 
 
