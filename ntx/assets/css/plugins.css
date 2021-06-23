@@ -1,4 +1,4 @@
-/*!
+﻿/*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
 
@@ -133,11 +133,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 .slick-prev:before
 {
-    content: '←';
+    content: 'â†';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '→';
+    content: 'â†’';
 }
 
 .slick-next
@@ -151,11 +151,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 .slick-next:before
 {
-    content: '→';
+    content: 'â†’';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '←';
+    content: 'â†';
 }
 
 /* Dots */
@@ -233,7 +233,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 20px;
     height: 20px;
 
-    content: '•';
+    content: 'â€¢';
     text-align: center;
 
     opacity: .25;

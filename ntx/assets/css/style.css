@@ -1,10 +1,5 @@
 ﻿/*!
-Template Name: ViewTube
-Template URI: http://themebing.com/html/viewtube
-Author: ThemeBing
-Author URI: https://themeforest.net/user/themebing
-Description: Video Template
-Version: 1.0.0
+
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -140,7 +135,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked::before {
-    content: '✔';
+    content: 'âœ”';
     position: absolute;
     display: inline-block;
     margin: -5px 0 0 2px;
@@ -787,7 +782,7 @@ body.admin-bar .fixed-top {
 }
 
 .custom-logo-link img {
-    width: 110px;
+    width: 170px;
 }
 
 .navbar-logo-text {
@@ -1393,7 +1388,7 @@ body.admin-bar .fixed-top {
 
 .breadcrumbs ul li:before {
     position: absolute;
-    content: '»';
+    content: 'Â»';
     right: -17px;
     font-size: 18px;
 }
@@ -1448,7 +1443,7 @@ body.admin-bar .fixed-top {
 
 .breadcrumb-content ul li:before {
     position: absolute;
-    content: '»';
+    content: 'Â»';
     top: -2px;
     right: -15px;
     font-size: 18px;
@@ -1652,7 +1647,7 @@ body.admin-bar .fixed-top {
 ## Countdown
 --------------------------------------------------------------*/
 .countdown {
-    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/c0a32732-b033-43b3-be2a-8fee037a6146/0416908d-a0dc-4ebd-bec9-157d998ec9fa/AR-es-20210607-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+    background-image: url("../../assets/images/elti-meshau-2S2F2exmbhw-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -2245,7 +2240,7 @@ figure.wp-block-gallery.alignfull {
 }
 
 #video-uploader .dropzone.is-dragover {
-    border: 3px dashed #5b1ce6;
+    border: 3px dashed #e90101;
 }
 
 #video-uploader .dropcomplete {
