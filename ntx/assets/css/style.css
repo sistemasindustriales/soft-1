@@ -380,6 +380,36 @@ button.mfp-close {
 /*--------------------------------------------------------------
 ## Button
 --------------------------------------------------------------*/
+
+
+         .btn-grad {background-image: linear-gradient(to right, #35196e 0%, #9d30e6  51%, #4c20af  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.8s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 1px #111;
+            border-radius: 7px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
+
+
+
+
+
+
+
+
 .viewtube-btn {
     font-family: Fira Sans Condensed;
     display: inline-block;
