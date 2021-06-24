@@ -1,12 +1,4 @@
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3387520">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/eb/a7/ad/eba7ad98-be91-246a-5537-3c5cc5defee7/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
+
 
 
 
@@ -22,15 +14,7 @@
 
 
 2018
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3766354">
-<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/96/54/29/965429a6-cb5d-f84b-c917-ba3a9cc63540/SPE_EQUALIZER_2_WW_ARTWORK_EN_3840x2160_1P3TMW000000EY.png/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
+
 
 
 
@@ -48,46 +32,6 @@
 
 2017
 
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3348730">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video115/v4/53/2c/7e/532c7ec7-00f1-fd44-73c1-84e692f53d4e/pr_source.jpg/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3402236">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/ed/c2/da/edc2da9e-e0a0-5a75-2183-1350e03a0e8f/MurderOnOrientExpress_CoverArt_3840x2160.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3481634">
-<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video114/v4/f8/50/fb/f850fb67-05a7-4274-f41a-a4ea27a1bb5e/pr_source.png/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3563262">
-<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video124/v4/8d/e8/b9/8de8b9f3-ea36-2027-fa72-97ab62e2d075/pr_source.png/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
 
 
 

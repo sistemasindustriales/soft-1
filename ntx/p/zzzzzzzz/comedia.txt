@@ -8,15 +8,6 @@
 
 2018
 
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3846674">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/crxNKR5xn2w-5nMMgg7fvQ/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
 
 
 
@@ -29,90 +20,6 @@
 
 
 2017
-
-
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3401882">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/72/55/93/725593b9-c167-d5cd-63ae-112634d4caf2/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3411444">
-<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video114/v4/ea/59/e3/ea59e3ef-484f-46bf-80ef-154fd986956d/1324404435-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3469046">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/17/48/6e/17486ecd-79d8-24e9-4375-5e8686b53a9a/1247589650-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3486626">
-<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video114/v4/29/62/d0/2962d04e-01ea-d299-2bb5-7bf1d15c3ad7/1263229806-WW-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3532216">
-<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/GV69Q9pRc9wSQ62T5QBf2A/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3564472">
-<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video113/v4/20/26/b7/2026b7a3-acc4-648a-c6a9-1be34ff5f09e/1257271045-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3606752">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/93/20/51/93205106-0822-8deb-0d0d-548de2163292/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3823116">
-<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/06/db/74/06db74e9-2627-cf12-0dde-441077c11276/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
 
 
 

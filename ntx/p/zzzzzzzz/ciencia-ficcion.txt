@@ -5,18 +5,13 @@
 
 
 
+
+
+
+
+
 2018
 
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3778644">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video113/v4/29/c1/d6/29c1d624-d587-14c1-b7ae-cbebb9f3eff0/DIS_SOLO_A_STAR_WARS_STORY_3840X2160_WW_ARTWORK_EN_3840x2160_20C9HM000000DM.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
 
 
 
@@ -35,43 +30,6 @@
 
 
 2017
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3315342">
-<img width="509" height="286" src="https://is3-ssl.mzstatic.com/image/thumb/Video114/v4/c8/99/0e/c8990e45-cc30-aeb3-c573-62c90b7ec9f4/1207483880-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3371366">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/af/44/a0/af44a001-deed-330c-c528-8fe622865515/1242544331-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3717490">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video114/v4/ef/cc/06/efcc06f4-8a9a-c380-20f3-f00428f3799b/SabansPowerRangers_en-US_3840x2160_Cover-Art_1213572965.lsr/2000x1125.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
 
 
 

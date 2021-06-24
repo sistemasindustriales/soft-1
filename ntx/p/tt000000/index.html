@@ -13,6 +13,7 @@
 <link rel="stylesheet" href='../../assets/css/style.css'>
 <link rel="stylesheet" href='../../assets/css/color.css'>
 <link id="template-color" rel="stylesheet" href='../../assets/css/dark.css'>
+<link href="../../assets/css/video-js.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -112,88 +113,75 @@
 </ul>
 </nav>
 </div>
+
+
+
+
 <div class="main-container">
-<div class="banners mt-4 mb-5">
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xl-8 col-md-7">
 
 
 
 
 
+<style>
+.video-js-responsive-container.vjs-hd {
+    padding-top: 56.25%;
+}
+.video-js-responsive-container.vjs-sd {
+    padding-top: 75%;
+}
+.video-js-responsive-container {
+    width: 100%;
+    position: relative;
+}
+.video-js-responsive-container .video-js {
+    height: 100% !important; 
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
+
+</style>
+<div class="video-js-responsive-container vjs-hd">
+ <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls  preload="auto"
+    poster="xxxxx"
+    data-setup="{}">
+
+<source src="x" type="application/x-mpegURL" />    
+<track kind="captions" src="subtitulo.vtt" label="Español" default/></track>
+
+
+
+<p class="vjs-no-js"></p>
+</video></div>
+
+<div class="container-fluid">
+<div class="row mt-15 mb-15">
+<div class="col-sm-6 my-auto">
 </div>
-
-<!--. estrenos -->
-
-
-
-<div class="row mb-4">
-<div class="col-md-6 my-auto">
-<h4>Tendencias</h4>
-</div>
-<div class="col-md-6 my-auto">
-
-</div>
-</div>
-
-
-
-
-<div class="row justify-content-center video-items" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
-
-
-
-
-
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/">
-<img width="509" height="286" src="" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-</div>
-
-<!--. estrenos -->
-
-
-<!--. estrenos -->
-
-
-<div class="row mb-4">
-<div class="col-md-6 my-auto">
-<h4>Nuevos Lanzamientos</h4>
-</div>
-<div class="col-md-6 my-auto">
-
 </div>
 </div>
 
+<div class="entry-content">
+<h3 class="video-entry-title">xxxxx (2021)</h3>
+<p>
+
+xxxxxxxx
+
+</p>
 
 
 
-<div class="row justify-content-center video-items" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
 
 
 
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/">
-<img width="509" height="286" src="" alt="">
-</a>
-</div>
-</div>
+<div class="wp-block-spacer" aria-hidden="true"></div>
 </div>
 
 
@@ -202,49 +190,25 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="pb-100">
+</div>
 </div>
 
-<!--. estrenos -->
+<div class="col-xl-4 col-md-5">
 
-
-
-
-
-
+</div>
 
 
 
 </div>
 </div>
 </div>
-
+</section>
+</div>
+</div>
 <div id="backtotop" style="display: block;"><i class="fal fa-lg fa-arrow-up"></i></div>
 <script src='../../assets/js/plugins.js'></script>
 <script src='../../assets/js/main.js'></script>
+<script src="../../assets/js/video.min.js"></script>
 </body>
 </html>

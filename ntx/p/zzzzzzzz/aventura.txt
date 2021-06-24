@@ -1,46 +1,10 @@
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3513498">
-<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video124/v4/ca/e7/14/cae714a8-3c39-7b6f-9228-ea329926598b/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
 
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3741700">
-<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video123/v4/f1/7b/4f/f17b4fdf-401b-fba7-f891-fbdc92d264a8/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
 
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3861390">
-<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/27/ee/c1/27eec14c-abe7-59a8-fc4f-413f9829f542/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
+
 
 
 
 2018
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3778644">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video113/v4/29/c1/d6/29c1d624-d587-14c1-b7ae-cbebb9f3eff0/DIS_SOLO_A_STAR_WARS_STORY_3840X2160_WW_ARTWORK_EN_3840x2160_20C9HM000000DM.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
 
 
 
@@ -51,123 +15,6 @@
 
 
 2017
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3371366">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/af/44/a0/af44a001-deed-330c-c528-8fe622865515/1242544331-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3411444">
-<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video114/v4/ea/59/e3/ea59e3ef-484f-46bf-80ef-154fd986956d/1324404435-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3450958">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/84/96/52/8496529d-5838-804a-d874-4d867079ce62/WarForThePlanetOfTheApes_CoverArt_3840x2160.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3469046">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/17/48/6e/17486ecd-79d8-24e9-4375-5e8686b53a9a/1247589650-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3486626">
-<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video114/v4/29/62/d0/2962d04e-01ea-d299-2bb5-7bf1d15c3ad7/1263229806-WW-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3501632">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video114/v4/f3/2e/cb/f32ecb72-cbaf-5131-cda8-91100efc62b0/DIS_THOR_R_WW_ARTWORK_EN-US_3840x2160_1MP7JS000000CO.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3564472">
-<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video113/v4/20/26/b7/2026b7a3-acc4-648a-c6a9-1be34ff5f09e/1257271045-US-AMP_SF.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3606752">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video113/v4/93/20/51/93205106-0822-8deb-0d0d-548de2163292/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3717490">
-<img width="509" height="286" src="https://is1-ssl.mzstatic.com/image/thumb/Video114/v4/ef/cc/06/efcc06f4-8a9a-c380-20f3-f00428f3799b/SabansPowerRangers_en-US_3840x2160_Cover-Art_1213572965.lsr/2000x1125.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3731562">
-<img width="509" height="286" src="https://is2-ssl.mzstatic.com/image/thumb/Video124/v4/1b/04/53/1b0453a8-270f-d97f-0267-059202d72274/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt3823116">
-<img width="509" height="286" src="https://is5-ssl.mzstatic.com/image/thumb/Video123/v4/06/db/74/06db74e9-2627-cf12-0dde-441077c11276/pr_source.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-
-
-
-
 
 
 

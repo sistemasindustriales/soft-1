@@ -501,7 +501,7 @@ button.mfp-close {
 --------------------------------------------------------------*/
 .slick-arrow {
     position: absolute;
-    background: #fff;
+    background: #111;
     width: 45px;
     height: 45px;
     top: 50%;
@@ -1677,7 +1677,7 @@ body.admin-bar .fixed-top {
 ## Countdown
 --------------------------------------------------------------*/
 .countdown {
-    background-image: url("../../assets/images/elti-meshau-2S2F2exmbhw-unsplash.jpg");
+    background-image: url("https://www.att.com/idpassets/sales/uf/landingpages/hbo-max/266056-hero-dsk-HBO-retina.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
