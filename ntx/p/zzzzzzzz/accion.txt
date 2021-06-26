@@ -1,14 +1,6 @@
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt4154796">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/98/48/88/98488873-4d12-410d-18d6-e0c1920a7d8b/DIS_AV_ENDGAME_ES_ARTWORK_ES-ES_EN_3840x2160_1OWPBJ000003LV.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-<div class="col-xl-8">
-<div class="video-item-card">
+
+
+
 
 
 
@@ -25,25 +17,7 @@
 
 
 
-
 2017
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
