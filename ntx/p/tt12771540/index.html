@@ -13,6 +13,7 @@
 <link rel="stylesheet" href='../../assets/css/style.css'>
 <link rel="stylesheet" href='../../assets/css/color.css'>
 <link id="template-color" rel="stylesheet" href='../../assets/css/dark.css'>
+<link href="../../assets/css/video-js.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -112,62 +113,41 @@
 </ul>
 </nav>
 </div>
+
+
+
+
 <div class="main-container">
-<div class="banners mt-4 mb-5">
 
 
 
 
 
+<style>
+.containervideo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
 
-</div>
-
-<!--. estrenos -->
-
-<div class="row mb-4">
-<div class="col-md-6 my-auto">
-<h4>Tendencias</h4>
-</div>
-<div class="col-md-6 my-auto">
-
-</div>
-</div>
-
-
-
-
-<div class="row justify-content-center video-items" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
-
-
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt12771540">
-<img width="509" height="286" src="https://bit.ly/3xw5rLS" alt="">
-</a>
-</div>
-</div>
-</div>
+</style>
 
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt7357302">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/M3USIjphB2lrcRhbY7rdDg/509x286.jpg" alt="">
-</a>
-</div>
-</div>
-</div>
-<div class="col-xl-8">
-<div class="video-item-card">
-<div class="video-thumb">
-<a href="../../p/tt8760684">
-<img width="509" height="286" src="https://is4-ssl.mzstatic.com/image/thumb/Video123/v4/21/4f/07/214f0779-813f-faa1-cf2e-16d8cd3f1d2e/89K04_DE_Apollo11_3840x2160.lsr/509x286.jpg" alt="">
-</a>
-</div>
-</div>
+
+<div class="containervideo">
+  <iframe class="responsive-iframe" src="https://pelisplus.icu/play?id=MTE1MDMz" scrolling="no" allowfullscreen="" frameborder="0"></iframe>
 </div>
 
 
@@ -175,82 +155,66 @@
 
 
 
-</div>
-
-<!--. estrenos -->
 
 
-<!--. estrenos -->
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="slick-list draggable">
 
 
-<div class="row mb-4">
-<div class="col-md-6 my-auto">
-<h4>Documentales</h4>
-</div>
-<div class="col-md-6 my-auto">
-
+<div class="container-fluid">
+<div class="row mt-15 mb-15">
+<div class="col-sm-6 my-auto">
 </div>
 </div>
-
-
-
-
-<div class="row justify-content-center video-items" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
-
-
-
-
-
-
-.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
-<!--. estrenos -->
+<div class="entry-content">
+<h3 class="video-entry-title">
+Audible (2021)
+</h3>
+<p>
+
+Estremecido por el suicidio de un amigo, un jugador de fútbol americano hipoacúsico lidia con la adversidad mientras se prepara para su último partido en la escuela.
+
+
+
+</p>
 
 
 
 
 
 
+<div class="wp-block-spacer" aria-hidden="true"></div>
+</div>
+
+
+
+
+
+
+
+<div class="pb-100">
+</div>
+</div>
+
+<div class="col-xl-4 col-md-5">
+
+</div>
 
 
 
 </div>
 </div>
 </div>
-
+</section>
+</div>
+</div>
 <div id="backtotop" style="display: block;"><i class="fal fa-lg fa-arrow-up"></i></div>
 <script src='../../assets/js/plugins.js'></script>
 <script src='../../assets/js/main.js'></script>
+<script src="../../assets/js/video.min.js"></script>
 </body>
 </html>
