@@ -1,3 +1,7 @@
+
+
+
+
 <?php
 $enlace =  $_GET["media"] ;
 
@@ -41,6 +45,22 @@ body {
             height: 12px;
         }
     </style>
+
+<style>
+img[alt*="000webhost"],
+img[alt*="000webhost"][style],
+img[src*="000webhost"],
+img[src*="000webhost"][style],
+body > div:nth-last-of-type(1)[style]{
+	opacity: 0 !important;
+	pointer-events:none !important;
+	width: 0px !important;
+	height: 0px !important;
+	visibility:hidden !important;
+	display:none !important;
+}
+
+</style>
 
 <style>
 /* width */
