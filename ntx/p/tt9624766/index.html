@@ -118,50 +118,47 @@
 
 
 <div class="main-container">
-<section class="bg-gray pt-4 pr-15 pl-15">
-<div class="container-fluid">
-<div class="row">
-<div class="slick-list draggable">
-
-
 
 
 
 
 <style>
-.video-js-responsive-container.vjs-hd {
-    padding-top: 56.25%;
+.containervideo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+ 
+  padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
-.video-js-responsive-container.vjs-sd {
-    padding-top: 75%;
-}
-.video-js-responsive-container {
-    width: 100%;
-    position: relative;
-}
-.video-js-responsive-container .video-js {
-    height: 100% !important; 
-    width: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
 </style>
-<div class="video-js-responsive-container vjs-hd">
- <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls  preload="auto"
-    poster="https://is3-ssl.mzstatic.com/image/thumb/Video114/v4/2a/e7/1a/2ae71a83-6eae-0216-3201-0939158f6af0/pr_source.png/509x286.jpg"
-    data-setup="{}">
+
+
+<div class="containervideo">
+  <iframe class="responsive-iframe" src="https://servicoop.000webhostapp.com/mediafire/embed.php?url=https://www.mediafire.com/file/1qr8un1xrcmc9o5/9624766.pdf/file" scrolling="no" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
 
 
-<source src="https://hls5x.vidembed.net/load/hls/p_P97OkWIy7IuQWG_uEWpQ/1627115562/332244/061f4bdf6684e3c1f4bef65c7e313195/ep.0.1617935694.m3u8" type="application/x-mpegURL" />    
 
-<track kind="captions" label="Spanish" src="subtitulo.vtt" default />
 
-<p class="vjs-no-js"></p>
-</video></div>
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="slick-list draggable">
+
 
 <div class="container-fluid">
 <div class="row mt-15 mb-15">
@@ -175,8 +172,8 @@
 Jiu Jitsu (2020)
 </h3>
 <p>
-Cada seis años, una antigua orden de luchadores de jiu-jitsu une fuerzas para luchar contra una feroz raza de invasores alienígenas. Pero cuando un célebre héroe de guerra cae derrotado, el destino del planeta y la humanidad está en juego.
 
+Cada seis años, una antigua orden de luchadores de jiu-jitsu une fuerzas para luchar contra una feroz raza de invasores alienígenas. Pero cuando un célebre héroe de guerra cae derrotado, el destino del planeta y la humanidad está en juego.
 
 
 </p>

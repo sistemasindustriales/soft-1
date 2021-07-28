@@ -118,51 +118,47 @@
 
 
 <div class="main-container">
-<section class="bg-gray pt-4 pr-15 pl-15">
-<div class="container-fluid">
-<div class="row">
-<div class="slick-list draggable">
-
-
 
 
 
 
 <style>
-.video-js-responsive-container.vjs-hd {
-    padding-top: 56.25%;
+.containervideo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+ 
+  padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
-.video-js-responsive-container.vjs-sd {
-    padding-top: 75%;
-}
-.video-js-responsive-container {
-    width: 100%;
-    position: relative;
-}
-.video-js-responsive-container .video-js {
-    height: 100% !important; 
-    width: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
 </style>
-<div class="video-js-responsive-container vjs-hd">
- <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls  preload="auto"
-    poster="https://is5-ssl.mzstatic.com/image/thumb/Video124/v4/bb/40/91/bb4091d0-722f-5af1-e742-6d92cc5d55c2/pr_source.lsr/509x286.jpg"
-    data-setup="{}">
+
+
+<div class="containervideo">
+  <iframe class="responsive-iframe" src="https://servicoop.000webhostapp.com/mediafire/embed.php?url=https://www.mediafire.com/file/v3qelxb8xsavpio/0805647.pdf/file" scrolling="no" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
 
 
 
-<source src="https://hls5x.vidembed.net/load/hls/8plNRklkl6ShLYYMGzUrDQ/1627115490/330774/3472408525db57dc39f83c7c0f754c3b/ep.0.1617949328.m3u8" type="application/x-mpegURL" />    
 
-<track kind="captions" label="Spanish" src="subtitulo.vtt" default />
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="slick-list draggable">
 
-<p class="vjs-no-js"></p>
-</video></div>
 
 <div class="container-fluid">
 <div class="row mt-15 mb-15">
@@ -178,7 +174,6 @@ Las brujas (2020)
 <p>
 
 Un pequeño huérfano a finales de 1967, se va a vivir con su querida abuela a Demopolis, un pueblo de Alabama. El niño y su abuela tienen extraños encuentros con algunas brujas por lo que deciden mudarse a un hotel de lujo en la costa. Por desgracia, llegan exactamente al mismo tiempo que la Gran Bruja que ha reunido a sus compinches de todo el planeta -que van de incógnito- para llevar a cabo sus horribles planes.
-
 
 
 </p>

@@ -118,51 +118,47 @@
 
 
 <div class="main-container">
-<section class="bg-gray pt-4 pr-15 pl-15">
-<div class="container-fluid">
-<div class="row">
-<div class="slick-list draggable">
-
-
 
 
 
 
 <style>
-.video-js-responsive-container.vjs-hd {
-    padding-top: 56.25%;
+.containervideo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+ 
+  padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
-.video-js-responsive-container.vjs-sd {
-    padding-top: 75%;
-}
-.video-js-responsive-container {
-    width: 100%;
-    position: relative;
-}
-.video-js-responsive-container .video-js {
-    height: 100% !important; 
-    width: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
 </style>
-<div class="video-js-responsive-container vjs-hd">
- <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls  preload="auto"
-    poster="https://is5-ssl.mzstatic.com/image/thumb/Video114/v4/b4/dd/90/b4dd908e-dc07-f7ff-da2c-cd424e1a7a7d/pr_source.lsr/509x286.jpg"
-    data-setup="{}">
+
+
+<div class="containervideo">
+  <iframe class="responsive-iframe" src="https://servicoop.000webhostapp.com/mediafire/embed.php?url=https://www.mediafire.com/file/4phiw9tcjff6l00/647571.pdf/file" scrolling="no" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
 
 
 
-<source src="https://hls3x.vidembed.net/load/hls/DA5FZzAbvGMHHCGvQPlMWQ/1627114996/333262/db9aa5499f607759c346da2060f74619/ep.0.1617903299.m3u8" type="application/x-mpegURL" />    
 
-<track kind="captions" label="Spanish" src="subtitulo.vtt" default />
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="slick-list draggable">
 
-<p class="vjs-no-js"></p>
-</video></div>
 
 <div class="container-fluid">
 <div class="row mt-15 mb-15">
@@ -178,7 +174,6 @@ Monster Hunter (2020)
 <p>
 
 Tras nuestro mundo hay otro: un mundo de monstruos peligrosos y poderosos que gobiernan sus dominios con una ferocidad mortal. Cuando la teniente Artemis y sus leales soldados son transportados de nuestro mundo al nuevo mundo, la imperturbable teniente recibe el golpe de su vida. En su desesperada batalla por sobrevivir contra enormes enemigos con poderes increíbles y ataques imparables y repugnantes, Artemis se unirá a un hombre misterioso que ha encontrado la forma de defenderse.
-
 
 
 </p>

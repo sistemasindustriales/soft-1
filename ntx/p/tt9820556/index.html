@@ -118,51 +118,47 @@
 
 
 <div class="main-container">
-<section class="bg-gray pt-4 pr-15 pl-15">
-<div class="container-fluid">
-<div class="row">
-<div class="slick-list draggable">
-
-
 
 
 
 
 <style>
-.video-js-responsive-container.vjs-hd {
-    padding-top: 56.25%;
+.containervideo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+ 
+  padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
-.video-js-responsive-container.vjs-sd {
-    padding-top: 75%;
-}
-.video-js-responsive-container {
-    width: 100%;
-    position: relative;
-}
-.video-js-responsive-container .video-js {
-    height: 100% !important; 
-    width: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
 </style>
-<div class="video-js-responsive-container vjs-hd">
- <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls  preload="auto"
-    poster="https://is3-ssl.mzstatic.com/image/thumb/Video124/v4/f5/49/b9/f549b9f2-3480-2a82-e8e8-031780a53bc8/pr_source.lsr/509x286.jpg"
-    data-setup="{}">
+
+
+<div class="containervideo">
+  <iframe class="responsive-iframe" src="https://servicoop.000webhostapp.com/mediafire/embed.php?url=https://www.mediafire.com/file/up9zm8inpf8rbil/9820556.pdf/file" scrolling="no" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
 
 
 
-<source src="https://hls1x.vidcloud9.com/load/hls/UsD4XedxV1nzTI7UcXZ7Hw/1627115434/333835/764afcb2471428498dde560a571691bd/ep.0.1625359160.m3u8" type="application/x-mpegURL" />    
 
-<track kind="captions" label="Spanish" src="subtitulo.vtt" default />
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="slick-list draggable">
 
-<p class="vjs-no-js"></p>
-</video></div>
 
 <div class="container-fluid">
 <div class="row mt-15 mb-15">
@@ -176,9 +172,7 @@
 Breach (2020)
 </h3>
 <p>
-
 Un rudo mecánico es elegido para estar despierto y dar mantenimiento al arca interestelar de una nave espacial que mantiene con vida a unos pocos miles de supervivientes de una Tierra moribunda. El peligro llega cuando un alien capaz de cambiar de forma aparece en la nave para acabar con todos los supervivientes.
-
 
 
 </p>

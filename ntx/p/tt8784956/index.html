@@ -118,52 +118,47 @@
 
 
 <div class="main-container">
-<section class="bg-gray pt-4 pr-15 pl-15">
-<div class="container-fluid">
-<div class="row">
-<div class="slick-list draggable">
-
-
 
 
 
 
 <style>
-.video-js-responsive-container.vjs-hd {
-    padding-top: 56.25%;
+.containervideo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+ 
+  padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
-.video-js-responsive-container.vjs-sd {
-    padding-top: 75%;
-}
-.video-js-responsive-container {
-    width: 100%;
-    position: relative;
-}
-.video-js-responsive-container .video-js {
-    height: 100% !important; 
-    width: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
 </style>
-<div class="video-js-responsive-container vjs-hd">
- <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls  preload="auto"
-    poster="https://is2-ssl.mzstatic.com/image/thumb/Video114/v4/e6/c0/92/e6c0927e-3a17-aeba-c1e3-9e9c911ceafc/pr_source.png/2000x1125.jpg"
-    data-setup="{}">
+
+
+<div class="containervideo">
+  <iframe class="responsive-iframe" src="https://servicoop.000webhostapp.com/mediafire/embed.php?url=https://www.mediafire.com/file/8ku4icfap1upes8/8784956.pdf/file" scrolling="no" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
 
 
 
 
-<source src="https://hls2x.vidembed.net/load/hls/1JLhaIaPzH8rpSa-kOlffA/1627113811/326366/67ce01bbb2b65ce877672cb6ae349b39/ep.0.1617974357.m3u8" type="application/x-mpegURL" />    
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="slick-list draggable">
 
-<track kind="captions" label="Spanish" src="subtitulo.vtt" default />
-
-<p class="vjs-no-js"></p>
-</video></div>
 
 <div class="container-fluid">
 <div class="row mt-15 mb-15">
@@ -179,7 +174,6 @@ Ava (2020)
 <p>
 
 Ava es una mortífera asesina a sueldo que trabaja para una organización de operaciones encubiertas, que viaja por todo el mundo acabando con aquellos objetivos que nadie más puede derribar. Cuando uno de sus encargos sale mal, Ava tendrá que luchar por una vida.
-
 
 
 </p>

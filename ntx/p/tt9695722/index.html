@@ -118,51 +118,47 @@
 
 
 <div class="main-container">
-<section class="bg-gray pt-4 pr-15 pl-15">
-<div class="container-fluid">
-<div class="row">
-<div class="slick-list draggable">
-
-
 
 
 
 
 <style>
-.video-js-responsive-container.vjs-hd {
-    padding-top: 56.25%;
+.containervideo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+ 
+  padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
-.video-js-responsive-container.vjs-sd {
-    padding-top: 75%;
-}
-.video-js-responsive-container {
-    width: 100%;
-    position: relative;
-}
-.video-js-responsive-container .video-js {
-    height: 100% !important; 
-    width: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
 </style>
-<div class="video-js-responsive-container vjs-hd">
- <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered" controls  preload="auto"
-    poster="https://is3-ssl.mzstatic.com/image/thumb/Video114/v4/a4/67/50/a46750b2-5674-a3de-7f38-ac0d53665ea9/pr_source.lsr/509x286.jpg"
-    data-setup="{}">
+
+
+<div class="containervideo">
+  <iframe class="responsive-iframe" src="https://servicoop.000webhostapp.com/mediafire/embed.php?url=https://www.mediafire.com/file/apu94rqe6dswslg/9695722.pdf/file" scrolling="no" allowfullscreen="" frameborder="0"></iframe>
+</div>
 
 
 
- 
-<source src="https://hls1x.vidcloud9.com/load/hls/sZyJ6iDvHn-WJJpOHsNxaQ/1627115305/329650/ca9c48a93c3a6227dc67afc187deb5be/ep.0.1625399634.m3u8" type="application/x-mpegURL" />    
 
-<track kind="captions" label="Spanish" src="subtitulo.vtt" default />
 
-<p class="vjs-no-js"></p>
-</video></div>
+<section class="bg-gray pt-4 pr-15 pl-15">
+<div class="container-fluid">
+<div class="row">
+<div class="slick-list draggable">
+
 
 <div class="container-fluid">
 <div class="row mt-15 mb-15">
@@ -174,11 +170,11 @@
 <div class="entry-content">
 <h3 class="video-entry-title">
 Vanguard (2020)
+
 </h3>
 <p>
 
 Vanguard, una compañía de guardaespaldas, es la última esperanza de supervivencia para un contable que es perseguido por la organización de mercenarios más peligrosa del planeta.
-
 
 
 </p>
