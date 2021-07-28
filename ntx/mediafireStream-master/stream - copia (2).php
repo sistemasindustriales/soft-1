@@ -41,32 +41,9 @@ body > div:nth-last-of-type(1)[style]{
 </head>
 
 <body>
-<style>
-.containervideo {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
- 
-  padding-top: 58.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-}
 
-/* Then style the iframe to fit in the container div with full height and width */
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-</style>
-
-<div class="containervideo">
 <center>
-  <video  class="responsive-iframe" controls preload="auto" autoplay
+  <video id="my-video" class="video-js" controls preload="auto" width="720" height="480"
   poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
     <source src="<?php echo $pagina_inicio;  ?>" type='video/mp4'>
     <p class="vjs-no-js">
@@ -77,6 +54,5 @@ body > div:nth-last-of-type(1)[style]{
 
   <script src="http://vjs.zencdn.net/6.2.8/video.js"></script>
   </center>
-</div>
 </body>
 
