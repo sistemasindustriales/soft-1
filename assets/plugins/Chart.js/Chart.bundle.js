@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Chart.js
  * http://chartjs.org/
  * Version: 2.4.0
